@@ -1,0 +1,1 @@
+"DTS_ROOT":"/home/peppi/zephyrproject/modules/hal/stm32"
