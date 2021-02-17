@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "printk.h": "c"
+        "printk.h": "c",
+        "uart.h": "c",
+        "pthread.h": "c",
+        "zephyr.h": "c",
+        "kernel.h": "c"
     }
 }
