@@ -1,23 +1,5 @@
 # Blacklist everything
 *
-
 # Whitelist all Directories
 !*/
-
-# Blacklist git and private Folders again
-/build/**
-
-
-# Whitelist all File-Types which are interesting to us
-!*.py
-!*.tex
-!*.vhd
-!*.vhdl
-!*.asc
-!*.jpg
-!*.png
-!*.pdf
-
-# Whitelist PDF and gitignore
-!.gitignore
-!Dokumentation/Main-Dokumentation/build/*.pdf
+2.Semester-serial_crypto/DIC-serial-crypto-Programm/build
