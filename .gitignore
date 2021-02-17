@@ -1,5 +1,19 @@
+
 # Blacklist everything
 *
+
 # Whitelist all Directories
 !*/
-2.Semester-serial_crypto/DIC-serial-crypto-Programm/build/
+
+!*.c
+!*.txt
+!*.conf
+!*.rst
+!*.yml
+!*.exe
+!*.elf
+!*.lst
+
+
+2.Semester-serial_crypto/DIC-serial-crypto-Programm/build
+2.Semester-serial_crypto/DIC-serial-crypto-Programm/build
