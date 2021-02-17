@@ -486,7 +486,7 @@ Disassembly of section .text:
 void main(void)
 {
     2645:	f3 0f 1e fa          	endbr64 
-	printk("DU Stinksch %s\n", CONFIG_BOARD);
+	printk("Lezuo Stinkt: Auf diesem Board: %s\n", CONFIG_BOARD);
     2649:	48 8d 35 04 4b 00 00 	lea    0x4b04(%rip),%rsi        # 7154 <__func__.5051+0x154>
     2650:	48 8d 3d 0d 4b 00 00 	lea    0x4b0d(%rip),%rdi        # 7164 <__func__.5051+0x164>
     2657:	31 c0                	xor    %eax,%eax
@@ -680,9 +680,9 @@ FUNC_NORETURN void z_thread_entry(k_thread_entry_t entry,
 
 	CODE_UNREACHABLE; /* LCOV_EXCL_LINE */
     27b3:	ba 26 00 00 00       	mov    $0x26,%edx
-    27b8:	48 8d 35 b5 49 00 00 	lea    0x49b5(%rip),%rsi        # 7174 <__func__.5051+0x174>
+    27b8:	48 8d 35 c9 49 00 00 	lea    0x49c9(%rip),%rsi        # 7188 <__func__.5051+0x188>
     27bf:	31 c0                	xor    %eax,%eax
-    27c1:	48 8d 3d d5 49 00 00 	lea    0x49d5(%rip),%rdi        # 719d <__func__.5051+0x19d>
+    27c1:	48 8d 3d e9 49 00 00 	lea    0x49e9(%rip),%rdi        # 71b1 <__func__.5051+0x1b1>
     27c8:	e8 e0 21 00 00       	callq  49ad <posix_print_error_and_exit>
 
 00000000000027cd <chunk_size>:
@@ -1997,7 +1997,7 @@ int cbvprintf(cbprintf_cb out, void *ctx, const char *fp, va_list ap)
 
 			bps = "(nil)";
 			bpe = bps + 5;
-    321a:	48 8d 05 a6 3f 00 00 	lea    0x3fa6(%rip),%rax        # 71c7 <__func__.5051+0x1c7>
+    321a:	48 8d 05 ba 3f 00 00 	lea    0x3fba(%rip),%rax        # 71db <__func__.5051+0x1db>
     3221:	45 31 c9             	xor    %r9d,%r9d
     3224:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
 			bps = "(nil)";
@@ -2520,7 +2520,7 @@ static inline void pc_safe_call(int test, const char *test_str)
     35ac:	85 ff                	test   %edi,%edi
     35ae:	74 0e                	je     35be <pc_safe_call+0x12>
 		posix_print_error_and_exit("POSIX arch: Error on: %s\n",
-    35b0:	48 8d 3d 1b 3c 00 00 	lea    0x3c1b(%rip),%rdi        # 71d2 <__func__.5051+0x1d2>
+    35b0:	48 8d 3d 2f 3c 00 00 	lea    0x3c2f(%rip),%rdi        # 71e6 <__func__.5051+0x1e6>
     35b7:	31 c0                	xor    %eax,%eax
     35b9:	e9 ef 13 00 00       	jmpq   49ad <posix_print_error_and_exit>
 					   test_str);
@@ -2543,7 +2543,7 @@ static void posix_preexit_cleanup(void)
 	PC_SAFE_CALL(pthread_mutex_unlock(&mtx_threads));
     35c0:	48 8d 3d 19 7b 00 00 	lea    0x7b19(%rip),%rdi        # b0e0 <mtx_threads>
     35c7:	e8 44 ee ff ff       	callq  2410 <pthread_mutex_unlock@plt>
-    35cc:	48 8d 35 19 3c 00 00 	lea    0x3c19(%rip),%rsi        # 71ec <__func__.5051+0x1ec>
+    35cc:	48 8d 35 2d 3c 00 00 	lea    0x3c2d(%rip),%rsi        # 7200 <__func__.5051+0x200>
     35d3:	89 c7                	mov    %eax,%edi
     35d5:	e8 d2 ff ff ff       	callq  35ac <pc_safe_call>
 
@@ -2642,7 +2642,7 @@ static void posix_cleanup_handler(void *arg)
 	PC_SAFE_CALL(pthread_mutex_unlock(&mtx_threads));
     367f:	48 8d 3d 5a 7a 00 00 	lea    0x7a5a(%rip),%rdi        # b0e0 <mtx_threads>
     3686:	e8 85 ed ff ff       	callq  2410 <pthread_mutex_unlock@plt>
-    368b:	48 8d 35 5a 3b 00 00 	lea    0x3b5a(%rip),%rsi        # 71ec <__func__.5051+0x1ec>
+    368b:	48 8d 35 6e 3b 00 00 	lea    0x3b6e(%rip),%rsi        # 7200 <__func__.5051+0x200>
     3692:	89 c7                	mov    %eax,%edi
     3694:	e8 13 ff ff ff       	callq  35ac <pc_safe_call>
 
@@ -2682,7 +2682,7 @@ static void *posix_thread_starter(void *arg)
     36cf:	31 c0                	xor    %eax,%eax
 	PC_SAFE_CALL(pthread_mutex_lock(&mtx_threads));
     36d1:	e8 ea ed ff ff       	callq  24c0 <pthread_mutex_lock@plt>
-    36d6:	48 8d 35 32 3b 00 00 	lea    0x3b32(%rip),%rsi        # 720f <__func__.5051+0x20f>
+    36d6:	48 8d 35 46 3b 00 00 	lea    0x3b46(%rip),%rsi        # 7223 <__func__.5051+0x223>
     36dd:	89 c7                	mov    %eax,%edi
     36df:	e8 c8 fe ff ff       	callq  35ac <pc_safe_call>
 
@@ -2751,7 +2751,7 @@ static void *posix_thread_starter(void *arg)
 	PC_SAFE_CALL(pthread_cond_broadcast(&cond_threads));
     3774:	48 8d 3d a5 79 00 00 	lea    0x79a5(%rip),%rdi        # b120 <cond_threads>
     377b:	e8 70 eb ff ff       	callq  22f0 <pthread_cond_broadcast@plt>
-    3780:	48 8d 35 a9 3a 00 00 	lea    0x3aa9(%rip),%rsi        # 7230 <__func__.5051+0x230>
+    3780:	48 8d 35 bd 3a 00 00 	lea    0x3abd(%rip),%rsi        # 7244 <__func__.5051+0x244>
     3787:	89 c7                	mov    %eax,%edi
     3789:	e8 1e fe ff ff       	callq  35ac <pc_safe_call>
 	if (threads_table[this_th_nbr].state == ABORTING) {
@@ -2779,7 +2779,7 @@ static void *posix_thread_starter(void *arg)
 	PC_SAFE_CALL(pthread_cond_broadcast(&cond_threads));
     37b9:	48 8d 3d 60 79 00 00 	lea    0x7960(%rip),%rdi        # b120 <cond_threads>
     37c0:	e8 2b eb ff ff       	callq  22f0 <pthread_cond_broadcast@plt>
-    37c5:	48 8d 35 64 3a 00 00 	lea    0x3a64(%rip),%rsi        # 7230 <__func__.5051+0x230>
+    37c5:	48 8d 35 78 3a 00 00 	lea    0x3a78(%rip),%rsi        # 7244 <__func__.5051+0x244>
     37cc:	89 c7                	mov    %eax,%edi
     37ce:	e8 d9 fd ff ff       	callq  35ac <pc_safe_call>
 	posix_preexit_cleanup();
@@ -2827,7 +2827,7 @@ void posix_new_thread(posix_thread_status_t *ptr)
     3826:	48 85 c0             	test   %rax,%rax
     3829:	75 0c                	jne    3837 <posix_new_thread+0x58>
 		posix_print_error_and_exit(NO_MEM_ERR); /* LCOV_EXCL_LINE */
-    382b:	48 8d 3d 24 3a 00 00 	lea    0x3a24(%rip),%rdi        # 7256 <__func__.5051+0x256>
+    382b:	48 8d 3d 38 3a 00 00 	lea    0x3a38(%rip),%rdi        # 726a <__func__.5051+0x26a>
     3832:	e8 76 11 00 00       	callq  49ad <posix_print_error_and_exit>
 	(void)memset(&threads_table[threads_table_size], 0,
     3837:	48 63 15 42 7f 00 00 	movslq 0x7f42(%rip),%rdx        # b780 <threads_table_size>
@@ -2883,7 +2883,7 @@ void posix_new_thread(posix_thread_status_t *ptr)
 	PC_SAFE_CALL(pthread_create(&threads_table[t_slot].thread,
     389e:	48 8d 15 03 fe ff ff 	lea    -0x1fd(%rip),%rdx        # 36a8 <posix_thread_starter>
     38a5:	e8 06 ea ff ff       	callq  22b0 <pthread_create@plt>
-    38aa:	48 8d 35 cd 39 00 00 	lea    0x39cd(%rip),%rsi        # 727e <__func__.5051+0x27e>
+    38aa:	48 8d 35 e1 39 00 00 	lea    0x39e1(%rip),%rsi        # 7292 <__func__.5051+0x292>
 		__func__,
 		threads_table[t_slot].thead_cnt,
 		t_slot,
@@ -2925,7 +2925,7 @@ void posix_init_multithreading(void)
     38e8:	48 85 c0             	test   %rax,%rax
     38eb:	75 0c                	jne    38f9 <posix_init_multithreading+0x40>
 		posix_print_error_and_exit(NO_MEM_ERR); /* LCOV_EXCL_LINE */
-    38ed:	48 8d 3d 62 39 00 00 	lea    0x3962(%rip),%rdi        # 7256 <__func__.5051+0x256>
+    38ed:	48 8d 3d 76 39 00 00 	lea    0x3976(%rip),%rdi        # 726a <__func__.5051+0x26a>
     38f4:	e8 b4 10 00 00       	callq  49ad <posix_print_error_and_exit>
 	}
 
@@ -2939,7 +2939,7 @@ void posix_init_multithreading(void)
     3907:	00 00 00 
 	PC_SAFE_CALL(pthread_mutex_lock(&mtx_threads));
     390a:	e8 b1 eb ff ff       	callq  24c0 <pthread_mutex_lock@plt>
-    390f:	48 8d 35 f9 38 00 00 	lea    0x38f9(%rip),%rsi        # 720f <__func__.5051+0x20f>
+    390f:	48 8d 35 0d 39 00 00 	lea    0x390d(%rip),%rsi        # 7223 <__func__.5051+0x223>
     3916:	89 c7                	mov    %eax,%edi
 }
     3918:	58                   	pop    %rax
@@ -2967,7 +2967,7 @@ void posix_core_clean_up(void)
 		/* LCOV_EXCL_START */
 		if (pthread_cancel(threads_table[i].thread)) {
 			posix_print_warning(
-    392d:	48 8d 2d ae 39 00 00 	lea    0x39ae(%rip),%rbp        # 72e2 <__func__.5051+0x2e2>
+    392d:	48 8d 2d c2 39 00 00 	lea    0x39c2(%rip),%rbp        # 72f6 <__func__.5051+0x2f6>
 {
     3934:	53                   	push   %rbx
 	for (int i = 0; i < threads_table_size; i++) {
@@ -3090,7 +3090,7 @@ static ALWAYS_INLINE unsigned int arch_irq_lock(void)
 		} else {
 			posix_print_warning(/* LCOV_EXCL_LINE */
     39e7:	89 ee                	mov    %ebp,%esi
-    39e9:	48 8d 3d 26 39 00 00 	lea    0x3926(%rip),%rdi        # 7316 <__func__.5051+0x316>
+    39e9:	48 8d 3d 3a 39 00 00 	lea    0x393a(%rip),%rdi        # 732a <__func__.5051+0x32a>
     39f0:	31 c0                	xor    %eax,%eax
     39f2:	e8 8f 10 00 00       	callq  4a86 <posix_print_warning>
 				PREFIX"The kernel is trying to abort and swap "
@@ -3313,7 +3313,7 @@ void posix_new_thread_pre_start(void)
     3af6:	85 ff                	test   %edi,%edi
     3af8:	74 0e                	je     3b08 <pc_safe_call+0x12>
 		posix_print_error_and_exit("POSIX arch: Error on: %s\n",
-    3afa:	48 8d 3d d1 36 00 00 	lea    0x36d1(%rip),%rdi        # 71d2 <__func__.5051+0x1d2>
+    3afa:	48 8d 3d e5 36 00 00 	lea    0x36e5(%rip),%rdi        # 71e6 <__func__.5051+0x1e6>
     3b01:	31 c0                	xor    %eax,%eax
     3b03:	e9 a5 0e 00 00       	jmpq   49ad <posix_print_error_and_exit>
 }
@@ -3336,13 +3336,13 @@ static void *zephyr_wrapper(void *a)
     3b16:	50                   	push   %rax
 	PC_SAFE_CALL(pthread_mutex_lock(&mtx_cpu));
     3b17:	e8 a4 e9 ff ff       	callq  24c0 <pthread_mutex_lock@plt>
-    3b1c:	48 8d 35 6f 38 00 00 	lea    0x386f(%rip),%rsi        # 7392 <__func__.5051+0x392>
+    3b1c:	48 8d 35 83 38 00 00 	lea    0x3883(%rip),%rsi        # 73a6 <__func__.5051+0x3a6>
     3b23:	89 c7                	mov    %eax,%edi
     3b25:	e8 cc ff ff ff       	callq  3af6 <pc_safe_call>
 	PC_SAFE_CALL(pthread_mutex_unlock(&mtx_cpu));
     3b2a:	48 8d 3d 2f 76 00 00 	lea    0x762f(%rip),%rdi        # b160 <mtx_cpu>
     3b31:	e8 da e8 ff ff       	callq  2410 <pthread_mutex_unlock@plt>
-    3b36:	48 8d 35 72 38 00 00 	lea    0x3872(%rip),%rsi        # 73af <__func__.5051+0x3af>
+    3b36:	48 8d 35 86 38 00 00 	lea    0x3886(%rip),%rsi        # 73c3 <__func__.5051+0x3c3>
     3b3d:	89 c7                	mov    %eax,%edi
     3b3f:	e8 b2 ff ff ff       	callq  3af6 <pc_safe_call>
 
@@ -3380,7 +3380,7 @@ static void *zephyr_wrapper(void *a)
     3b70:	52                   	push   %rdx
 	PC_SAFE_CALL(pthread_mutex_lock(&mtx_cpu));
     3b71:	e8 4a e9 ff ff       	callq  24c0 <pthread_mutex_lock@plt>
-    3b76:	48 8d 35 15 38 00 00 	lea    0x3815(%rip),%rsi        # 7392 <__func__.5051+0x392>
+    3b76:	48 8d 35 29 38 00 00 	lea    0x3829(%rip),%rsi        # 73a6 <__func__.5051+0x3a6>
     3b7d:	89 c7                	mov    %eax,%edi
     3b7f:	e8 72 ff ff ff       	callq  3af6 <pc_safe_call>
 	PC_SAFE_CALL(pthread_cond_broadcast(&cond_cpu));
@@ -3391,7 +3391,7 @@ static void *zephyr_wrapper(void *a)
     3b91:	48 8d 1d c8 75 00 00 	lea    0x75c8(%rip),%rbx        # b160 <mtx_cpu>
 	PC_SAFE_CALL(pthread_cond_broadcast(&cond_cpu));
     3b98:	e8 53 e7 ff ff       	callq  22f0 <pthread_cond_broadcast@plt>
-    3b9d:	48 8d 35 2a 38 00 00 	lea    0x382a(%rip),%rsi        # 73ce <__func__.5051+0x3ce>
+    3b9d:	48 8d 35 3e 38 00 00 	lea    0x383e(%rip),%rsi        # 73e2 <__func__.5051+0x3e2>
     3ba4:	89 c7                	mov    %eax,%edi
     3ba6:	e8 4b ff ff ff       	callq  3af6 <pc_safe_call>
 	while (cpu_halted == halted) {
@@ -3405,7 +3405,7 @@ static void *zephyr_wrapper(void *a)
 	PC_SAFE_CALL(pthread_mutex_unlock(&mtx_cpu));
     3bc5:	48 8d 3d 94 75 00 00 	lea    0x7594(%rip),%rdi        # b160 <mtx_cpu>
     3bcc:	e8 3f e8 ff ff       	callq  2410 <pthread_mutex_unlock@plt>
-    3bd1:	48 8d 35 d7 37 00 00 	lea    0x37d7(%rip),%rsi        # 73af <__func__.5051+0x3af>
+    3bd1:	48 8d 35 eb 37 00 00 	lea    0x37eb(%rip),%rsi        # 73c3 <__func__.5051+0x3c3>
     3bd8:	89 c7                	mov    %eax,%edi
 }
     3bda:	58                   	pop    %rax
@@ -3472,7 +3472,7 @@ void posix_boot_cpu(void)
     3c3b:	31 c0                	xor    %eax,%eax
 	PC_SAFE_CALL(pthread_mutex_lock(&mtx_cpu));
     3c3d:	e8 7e e8 ff ff       	callq  24c0 <pthread_mutex_lock@plt>
-    3c42:	48 8d 35 49 37 00 00 	lea    0x3749(%rip),%rsi        # 7392 <__func__.5051+0x392>
+    3c42:	48 8d 35 5d 37 00 00 	lea    0x375d(%rip),%rsi        # 73a6 <__func__.5051+0x3a6>
     3c49:	89 c7                	mov    %eax,%edi
     3c4b:	e8 a6 fe ff ff       	callq  3af6 <pc_safe_call>
 	PC_SAFE_CALL(pthread_create(&zephyr_thread, NULL, zephyr_wrapper, NULL));
@@ -3484,7 +3484,7 @@ void posix_boot_cpu(void)
     3c5e:	c6 05 f7 66 00 00 00 	movb   $0x0,0x66f7(%rip)        # a35c <cpu_halted>
 	PC_SAFE_CALL(pthread_create(&zephyr_thread, NULL, zephyr_wrapper, NULL));
     3c65:	e8 46 e6 ff ff       	callq  22b0 <pthread_create@plt>
-    3c6a:	48 8d 35 7f 37 00 00 	lea    0x377f(%rip),%rsi        # 73f0 <__func__.5051+0x3f0>
+    3c6a:	48 8d 35 93 37 00 00 	lea    0x3793(%rip),%rsi        # 7404 <__func__.5051+0x404>
     3c71:	89 c7                	mov    %eax,%edi
     3c73:	e8 7e fe ff ff       	callq  3af6 <pc_safe_call>
 	while (cpu_halted == false) {
@@ -3499,7 +3499,7 @@ void posix_boot_cpu(void)
 	PC_SAFE_CALL(pthread_mutex_unlock(&mtx_cpu));
     3c92:	48 8d 3d c7 74 00 00 	lea    0x74c7(%rip),%rdi        # b160 <mtx_cpu>
     3c99:	e8 72 e7 ff ff       	callq  2410 <pthread_mutex_unlock@plt>
-    3c9e:	48 8d 35 0a 37 00 00 	lea    0x370a(%rip),%rsi        # 73af <__func__.5051+0x3af>
+    3c9e:	48 8d 35 1e 37 00 00 	lea    0x371e(%rip),%rsi        # 73c3 <__func__.5051+0x3c3>
     3ca5:	89 c7                	mov    %eax,%edi
     3ca7:	e8 4a fe ff ff       	callq  3af6 <pc_safe_call>
 
@@ -3609,7 +3609,7 @@ void posix_soc_clean_up(void)
     3d3f:	c6 05 68 7a 00 00 01 	movb   $0x1,0x7a68(%rip)        # b7ae <soc_terminate>
 		PC_SAFE_CALL(pthread_mutex_lock(&mtx_cpu));
     3d46:	e8 75 e7 ff ff       	callq  24c0 <pthread_mutex_lock@plt>
-    3d4b:	48 8d 35 40 36 00 00 	lea    0x3640(%rip),%rsi        # 7392 <__func__.5051+0x392>
+    3d4b:	48 8d 35 54 36 00 00 	lea    0x3654(%rip),%rsi        # 73a6 <__func__.5051+0x3a6>
     3d52:	89 c7                	mov    %eax,%edi
     3d54:	e8 9d fd ff ff       	callq  3af6 <pc_safe_call>
 		PC_SAFE_CALL(pthread_cond_broadcast(&cond_cpu));
@@ -3618,13 +3618,13 @@ void posix_soc_clean_up(void)
     3d60:	c6 05 f5 65 00 00 01 	movb   $0x1,0x65f5(%rip)        # a35c <cpu_halted>
 		PC_SAFE_CALL(pthread_cond_broadcast(&cond_cpu));
     3d67:	e8 84 e5 ff ff       	callq  22f0 <pthread_cond_broadcast@plt>
-    3d6c:	48 8d 35 5b 36 00 00 	lea    0x365b(%rip),%rsi        # 73ce <__func__.5051+0x3ce>
+    3d6c:	48 8d 35 6f 36 00 00 	lea    0x366f(%rip),%rsi        # 73e2 <__func__.5051+0x3e2>
     3d73:	89 c7                	mov    %eax,%edi
     3d75:	e8 7c fd ff ff       	callq  3af6 <pc_safe_call>
 		PC_SAFE_CALL(pthread_mutex_unlock(&mtx_cpu));
     3d7a:	48 8d 3d df 73 00 00 	lea    0x73df(%rip),%rdi        # b160 <mtx_cpu>
     3d81:	e8 8a e6 ff ff       	callq  2410 <pthread_mutex_unlock@plt>
-    3d86:	48 8d 35 22 36 00 00 	lea    0x3622(%rip),%rsi        # 73af <__func__.5051+0x3af>
+    3d86:	48 8d 35 36 36 00 00 	lea    0x3636(%rip),%rsi        # 73c3 <__func__.5051+0x3c3>
     3d8d:	89 c7                	mov    %eax,%edi
     3d8f:	e8 62 fd ff ff       	callq  3af6 <pc_safe_call>
 			sleep(1);
@@ -3679,8 +3679,8 @@ void hwm_set_sig_handler(void)
     3de5:	85 c0                	test   %eax,%eax
     3de7:	74 15                	je     3dfe <hwm_set_sig_handler+0x4d>
 		posix_print_error_and_exit("POSIX arch: Error on: %s\n",
-    3de9:	48 8d 35 3b 36 00 00 	lea    0x363b(%rip),%rsi        # 742b <__func__.5051+0x42b>
-    3df0:	48 8d 3d db 33 00 00 	lea    0x33db(%rip),%rdi        # 71d2 <__func__.5051+0x1d2>
+    3de9:	48 8d 35 4f 36 00 00 	lea    0x364f(%rip),%rsi        # 743f <__func__.5051+0x43f>
+    3df0:	48 8d 3d ef 33 00 00 	lea    0x33ef(%rip),%rdi        # 71e6 <__func__.5051+0x1e6>
     3df7:	31 c0                	xor    %eax,%eax
     3df9:	e8 af 0b 00 00       	callq  49ad <posix_print_error_and_exit>
 
@@ -3700,8 +3700,8 @@ void hwm_set_sig_handler(void)
     3e1b:	85 c0                	test   %eax,%eax
     3e1d:	74 15                	je     3e34 <hwm_set_sig_handler+0x83>
 		posix_print_error_and_exit("POSIX arch: Error on: %s\n",
-    3e1f:	48 8d 35 1f 36 00 00 	lea    0x361f(%rip),%rsi        # 7445 <__func__.5051+0x445>
-    3e26:	48 8d 3d a5 33 00 00 	lea    0x33a5(%rip),%rdi        # 71d2 <__func__.5051+0x1d2>
+    3e1f:	48 8d 35 33 36 00 00 	lea    0x3633(%rip),%rsi        # 7459 <__func__.5051+0x459>
+    3e26:	48 8d 3d b9 33 00 00 	lea    0x33b9(%rip),%rdi        # 71e6 <__func__.5051+0x1e6>
     3e2d:	31 c0                	xor    %eax,%eax
     3e2f:	e8 79 0b 00 00       	callq  49ad <posix_print_error_and_exit>
 	PC_SAFE_CALL(sigaction(SIGINT, &act, NULL));
@@ -3713,8 +3713,8 @@ void hwm_set_sig_handler(void)
     3e43:	85 c0                	test   %eax,%eax
     3e45:	74 15                	je     3e5c <hwm_set_sig_handler+0xab>
 		posix_print_error_and_exit("POSIX arch: Error on: %s\n",
-    3e47:	48 8d 35 16 36 00 00 	lea    0x3616(%rip),%rsi        # 7464 <__func__.5051+0x464>
-    3e4e:	48 8d 3d 7d 33 00 00 	lea    0x337d(%rip),%rdi        # 71d2 <__func__.5051+0x1d2>
+    3e47:	48 8d 35 2a 36 00 00 	lea    0x362a(%rip),%rsi        # 7478 <__func__.5051+0x478>
+    3e4e:	48 8d 3d 91 33 00 00 	lea    0x3391(%rip),%rdi        # 71e6 <__func__.5051+0x1e6>
     3e55:	31 c0                	xor    %eax,%eax
     3e57:	e8 51 0b 00 00       	callq  49ad <posix_print_error_and_exit>
 }
@@ -3793,7 +3793,7 @@ void hwm_main_loop(void)
     3f03:	eb 14                	jmp    3f19 <hwm_main_loop+0x38>
 		posix_print_warning("next_timer_time corrupted (%"PRIu64"<= %"
     3f05:	8b 0d 45 64 00 00    	mov    0x6445(%rip),%ecx        # a350 <next_timer_index>
-    3f0b:	48 8d 3d 70 35 00 00 	lea    0x3570(%rip),%rdi        # 7482 <__func__.5051+0x482>
+    3f0b:	48 8d 3d 84 35 00 00 	lea    0x3584(%rip),%rdi        # 7496 <__func__.5051+0x496>
     3f12:	31 c0                	xor    %eax,%eax
     3f14:	e8 6d 0b 00 00       	callq  4a86 <posix_print_warning>
 	if (signaled_end || (simu_time > end_of_time)) {
@@ -3812,7 +3812,7 @@ void hwm_main_loop(void)
 		posix_print_trace("\nStopped at %.3Lfs\n",
     3f47:	d8 35 03 32 00 00    	fdivs  0x3203(%rip)        # 7150 <__func__.5051+0x150>
     3f4d:	50                   	push   %rax
-    3f4e:	48 8d 3d 62 35 00 00 	lea    0x3562(%rip),%rdi        # 74b7 <__func__.5051+0x4b7>
+    3f4e:	48 8d 3d 76 35 00 00 	lea    0x3576(%rip),%rdi        # 74cb <__func__.5051+0x4cb>
     3f55:	50                   	push   %rax
     3f56:	31 c0                	xor    %eax,%eax
     3f58:	db 3c 24             	fstpt  (%rsp)
@@ -3856,7 +3856,7 @@ void hwm_main_loop(void)
 		default:
 			/* LCOV_EXCL_START */
 			posix_print_error_and_exit(
-    3f92:	48 8d 3d 32 35 00 00 	lea    0x3532(%rip),%rdi        # 74cb <__func__.5051+0x4cb>
+    3f92:	48 8d 3d 46 35 00 00 	lea    0x3546(%rip),%rdi        # 74df <__func__.5051+0x4df>
     3f99:	31 c0                	xor    %eax,%eax
     3f9b:	e8 0d 0a 00 00       	callq  49ad <posix_print_error_and_exit>
 					"next_timer_index corrupted\n");
@@ -3984,7 +3984,7 @@ static void native_add_time_options(void)
     4036:	48 89 fe             	mov    %rdi,%rsi
 		posix_print_error_and_exit("Error: stop-at must be positive "
     4039:	31 c0                	xor    %eax,%eax
-    403b:	48 8d 3d a5 34 00 00 	lea    0x34a5(%rip),%rdi        # 74e7 <__func__.5051+0x4e7>
+    403b:	48 8d 3d b9 34 00 00 	lea    0x34b9(%rip),%rdi        # 74fb <__func__.5051+0x4fb>
     4042:	e8 66 09 00 00       	callq  49ad <posix_print_error_and_exit>
 	hwm_set_end_of_time(args.stop_at*1e6);
     4047:	f2 0f 10 05 d1 2f 00 	movsd  0x2fd1(%rip),%xmm0        # 7020 <__func__.5051+0x20>
@@ -4371,7 +4371,7 @@ static void native_add_time_options(void)
 {
     4472:	50                   	push   %rax
 		posix_print_error_and_exit("The ratio needs to be > 0. "
-    4473:	48 8d 3d 93 30 00 00 	lea    0x3093(%rip),%rdi        # 750d <__func__.5051+0x50d>
+    4473:	48 8d 3d a7 30 00 00 	lea    0x30a7(%rip),%rdi        # 7521 <__func__.5051+0x521>
     447a:	31 c0                	xor    %eax,%eax
     447c:	e8 2c 05 00 00       	callq  49ad <posix_print_error_and_exit>
 	hwtimer_set_rt_ratio(args.rt_ratio);
@@ -4396,7 +4396,7 @@ static void native_add_time_options(void)
     44ad:	00 
     44ae:	77 0e                	ja     44be <cmd_rt_drift_found+0x25>
 		posix_print_error_and_exit("The drift needs to be > -1. "
-    44b0:	48 8d 3d 92 30 00 00 	lea    0x3092(%rip),%rdi        # 7549 <__func__.5051+0x549>
+    44b0:	48 8d 3d a6 30 00 00 	lea    0x30a6(%rip),%rdi        # 755d <__func__.5051+0x55d>
     44b7:	31 c0                	xor    %eax,%eax
     44b9:	e8 ef 04 00 00       	callq  49ad <posix_print_error_and_exit>
 	args.rt_ratio = args.rt_drift + 1;
@@ -4490,7 +4490,7 @@ void posix_irq_handler(void)
     4563:	75 12                	jne    4577 <posix_irq_handler+0x9b>
 		posix_print_error_and_exit("Received irq %i without a "
     4565:	89 ee                	mov    %ebp,%esi
-    4567:	48 8d 3d f1 33 00 00 	lea    0x33f1(%rip),%rdi        # 795f <__func__.5051+0x95f>
+    4567:	48 8d 3d 05 34 00 00 	lea    0x3405(%rip),%rdi        # 7973 <__func__.5051+0x973>
     456e:	31 c0                	xor    %eax,%eax
     4570:	e8 38 04 00 00       	callq  49ad <posix_print_error_and_exit>
     4575:	eb 20                	jmp    4597 <posix_irq_handler+0xbb>
@@ -4586,7 +4586,7 @@ void posix_irq_handler_im_from_sw(void)
 			/* LCOV_EXCL_START */
 			posix_print_error_and_exit("programming error: %s "
     45fb:	48 8d 35 fe 29 00 00 	lea    0x29fe(%rip),%rsi        # 7000 <__func__.5051>
-    4602:	48 8d 3d 84 33 00 00 	lea    0x3384(%rip),%rdi        # 798d <__func__.5051+0x98d>
+    4602:	48 8d 3d 98 33 00 00 	lea    0x3398(%rip),%rdi        # 79a1 <__func__.5051+0x9a1>
     4609:	e8 9f 03 00 00       	callq  49ad <posix_print_error_and_exit>
 					__func__);
 			/* LCOV_EXCL_STOP */
@@ -5354,7 +5354,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4c65:	49 63 f5             	movslq %r13d,%rsi
     4c68:	74 1c                	je     4c86 <cmd_gen_switch_syntax.constprop.0+0x52>
   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
-    4c6a:	4c 8d 05 09 2e 00 00 	lea    0x2e09(%rip),%r8        # 7a7a <__func__.5051+0xa7a>
+    4c6a:	4c 8d 05 1d 2e 00 00 	lea    0x2e1d(%rip),%r8        # 7a8e <__func__.5051+0xa8e>
     4c71:	48 83 c9 ff          	or     $0xffffffffffffffff,%rcx
     4c75:	48 89 ef             	mov    %rbp,%rdi
     4c78:	31 c0                	xor    %eax,%eax
@@ -5367,12 +5367,12 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4c86:	41 80 7c 24 18 6c    	cmpb   $0x6c,0x18(%r12)
     4c8c:	49 8b 44 24 10       	mov    0x10(%r12),%rax
     4c91:	74 0c                	je     4c9f <cmd_gen_switch_syntax.constprop.0+0x6b>
-    4c93:	4c 8d 05 e4 2d 00 00 	lea    0x2de4(%rip),%r8        # 7a7e <__func__.5051+0xa7e>
+    4c93:	4c 8d 05 f8 2d 00 00 	lea    0x2df8(%rip),%r8        # 7a92 <__func__.5051+0xa92>
     4c9a:	41 52                	push   %r10
     4c9c:	50                   	push   %rax
     4c9d:	eb 0a                	jmp    4ca9 <cmd_gen_switch_syntax.constprop.0+0x75>
     4c9f:	41 50                	push   %r8
-    4ca1:	4c 8d 05 df 2d 00 00 	lea    0x2ddf(%rip),%r8        # 7a87 <__func__.5051+0xa87>
+    4ca1:	4c 8d 05 f3 2d 00 00 	lea    0x2df3(%rip),%r8        # 7a9b <__func__.5051+0xa9b>
     4ca8:	50                   	push   %rax
     4ca9:	48 89 ef             	mov    %rbp,%rdi
     4cac:	48 83 c9 ff          	or     $0xffffffffffffffff,%rcx
@@ -5392,8 +5392,8 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4cc3:	79 1a                	jns    4cdf <cmd_gen_switch_syntax.constprop.0+0xab>
 		posix_print_error_and_exit("Unexpected error in %s %i\n",
     4cc5:	ba 07 01 00 00       	mov    $0x107,%edx
-    4cca:	48 8d 35 c2 2d 00 00 	lea    0x2dc2(%rip),%rsi        # 7a93 <__func__.5051+0xa93>
-    4cd1:	48 8d 3d f9 2d 00 00 	lea    0x2df9(%rip),%rdi        # 7ad1 <__func__.5051+0xad1>
+    4cca:	48 8d 35 d6 2d 00 00 	lea    0x2dd6(%rip),%rsi        # 7aa7 <__func__.5051+0xaa7>
+    4cd1:	48 8d 3d 0d 2e 00 00 	lea    0x2e0d(%rip),%rdi        # 7ae5 <__func__.5051+0xae5>
     4cd8:	31 c0                	xor    %eax,%eax
     4cda:	e8 ce fc ff ff       	callq  49ad <posix_print_error_and_exit>
 					   __FILE__, __LINE__);
@@ -5412,9 +5412,9 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4cea:	48 8d 7c 1d 00       	lea    0x0(%rbp,%rbx,1),%rdi
 	if (args_s_el->is_mandatory == false) {
     4cef:	49 63 f5             	movslq %r13d,%rsi
-    4cf2:	48 8d 15 f3 2d 00 00 	lea    0x2df3(%rip),%rdx        # 7aec <__func__.5051+0xaec>
+    4cf2:	48 8d 15 07 2e 00 00 	lea    0x2e07(%rip),%rdx        # 7b00 <__func__.5051+0xb00>
     4cf9:	74 07                	je     4d02 <cmd_gen_switch_syntax.constprop.0+0xce>
-    4cfb:	48 8d 15 eb 2d 00 00 	lea    0x2deb(%rip),%rdx        # 7aed <__func__.5051+0xaed>
+    4cfb:	48 8d 15 ff 2d 00 00 	lea    0x2dff(%rip),%rdx        # 7b01 <__func__.5051+0xb01>
 		snprintf(buf, size, "] ");
 	} else {
 		snprintf(buf, size, " ");
@@ -5506,7 +5506,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4da6:	eb 13                	jmp    4dbb <cmd_is_option+0xa3>
 		posix_print_error_and_exit("Incorrect option syntax '%s'. The "
     4da8:	4c 89 c6             	mov    %r8,%rsi
-    4dab:	48 8d 3d 3d 2d 00 00 	lea    0x2d3d(%rip),%rdi        # 7aef <__func__.5051+0xaef>
+    4dab:	48 8d 3d 51 2d 00 00 	lea    0x2d51(%rip),%rdi        # 7b03 <__func__.5051+0xb03>
     4db2:	31 c0                	xor    %eax,%eax
     4db4:	e8 f4 fb ff ff       	callq  49ad <posix_print_error_and_exit>
     4db9:	eb 03                	jmp    4dbe <cmd_is_option+0xa6>
@@ -5538,7 +5538,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
 		arg++;
     4dde:	48 83 c5 02          	add    $0x2,%rbp
 	if ((strcasecmp(arg, "?") == 0) ||
-    4de2:	48 8d 35 60 2d 00 00 	lea    0x2d60(%rip),%rsi        # 7b49 <__func__.5051+0xb49>
+    4de2:	48 8d 35 74 2d 00 00 	lea    0x2d74(%rip),%rsi        # 7b5d <__func__.5051+0xb5d>
     4de9:	48 89 ef             	mov    %rbp,%rdi
     4dec:	e8 cf d4 ff ff       	callq  22c0 <strcasecmp@plt>
     4df1:	41 89 c0             	mov    %eax,%r8d
@@ -5548,7 +5548,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4df9:	45 85 c0             	test   %r8d,%r8d
     4dfc:	74 33                	je     4e31 <cmd_is_help_option+0x6b>
 	    (strcasecmp(arg, "h") == 0) ||
-    4dfe:	48 8d 35 46 2d 00 00 	lea    0x2d46(%rip),%rsi        # 7b4b <__func__.5051+0xb4b>
+    4dfe:	48 8d 35 5a 2d 00 00 	lea    0x2d5a(%rip),%rsi        # 7b5f <__func__.5051+0xb5f>
     4e05:	48 89 ef             	mov    %rbp,%rdi
     4e08:	e8 b3 d4 ff ff       	callq  22c0 <strcasecmp@plt>
     4e0d:	41 89 c0             	mov    %eax,%r8d
@@ -5558,7 +5558,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4e15:	45 85 c0             	test   %r8d,%r8d
     4e18:	74 17                	je     4e31 <cmd_is_help_option+0x6b>
 	    (strcasecmp(arg, "help") == 0)) {
-    4e1a:	48 8d 35 cc 2d 00 00 	lea    0x2dcc(%rip),%rsi        # 7bed <__func__.5051+0xbed>
+    4e1a:	48 8d 35 e0 2d 00 00 	lea    0x2de0(%rip),%rsi        # 7c01 <__func__.5051+0xc01>
     4e21:	48 89 ef             	mov    %rbp,%rdi
     4e24:	e8 97 d4 ff ff       	callq  22c0 <strcasecmp@plt>
 	    (strcasecmp(arg, "h") == 0) ||
@@ -5614,7 +5614,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4eb1:	e8 4a d5 ff ff       	callq  2400 <strtol@plt>
     4eb6:	e9 b6 00 00 00       	jmpq   4f71 <cmd_read_option_value+0x13e>
 		if (strcasecmp(str, "false") == 0) {
-    4ebb:	48 8d 35 8b 2c 00 00 	lea    0x2c8b(%rip),%rsi        # 7b4d <__func__.5051+0xb4d>
+    4ebb:	48 8d 35 9f 2c 00 00 	lea    0x2c9f(%rip),%rsi        # 7b61 <__func__.5051+0xb61>
     4ec2:	e8 f9 d3 ff ff       	callq  22c0 <strcasecmp@plt>
     4ec7:	85 c0                	test   %eax,%eax
     4ec9:	75 0a                	jne    4ed5 <cmd_read_option_value+0xa2>
@@ -5624,7 +5624,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4ece:	49 8d 44 24 05       	lea    0x5(%r12),%rax
     4ed3:	eb 1b                	jmp    4ef0 <cmd_read_option_value+0xbd>
 		} else if (strcmp(str, "0") == 0) {
-    4ed5:	48 8d 35 77 2c 00 00 	lea    0x2c77(%rip),%rsi        # 7b53 <__func__.5051+0xb53>
+    4ed5:	48 8d 35 8b 2c 00 00 	lea    0x2c8b(%rip),%rsi        # 7b67 <__func__.5051+0xb67>
     4edc:	4c 89 e7             	mov    %r12,%rdi
     4edf:	e8 ec d4 ff ff       	callq  23d0 <strcmp@plt>
     4ee4:	85 c0                	test   %eax,%eax
@@ -5637,7 +5637,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
 	if (!error && endptr && *endptr != 0) {
     4ef4:	e9 a0 00 00 00       	jmpq   4f99 <cmd_read_option_value+0x166>
 		} else if (strcasecmp(str, "true") == 0) {
-    4ef9:	48 8d 35 55 2c 00 00 	lea    0x2c55(%rip),%rsi        # 7b55 <__func__.5051+0xb55>
+    4ef9:	48 8d 35 69 2c 00 00 	lea    0x2c69(%rip),%rsi        # 7b69 <__func__.5051+0xb69>
     4f00:	4c 89 e7             	mov    %r12,%rdi
     4f03:	e8 b8 d3 ff ff       	callq  22c0 <strcasecmp@plt>
     4f08:	85 c0                	test   %eax,%eax
@@ -5648,7 +5648,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
     4f0f:	49 8d 44 24 04       	lea    0x4(%r12),%rax
     4f14:	eb da                	jmp    4ef0 <cmd_read_option_value+0xbd>
 		} else if (strcmp(str, "1") == 0) {
-    4f16:	48 8d 35 3d 2c 00 00 	lea    0x2c3d(%rip),%rsi        # 7b5a <__func__.5051+0xb5a>
+    4f16:	48 8d 35 51 2c 00 00 	lea    0x2c51(%rip),%rsi        # 7b6e <__func__.5051+0xb6e>
     4f1d:	4c 89 e7             	mov    %r12,%rdi
     4f20:	e8 ab d4 ff ff       	callq  23d0 <strcmp@plt>
     4f25:	85 c0                	test   %eax,%eax
@@ -5656,7 +5656,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
 		posix_print_error_and_exit("Error reading value of %s '%s'. Use"
     4f29:	4c 89 e2             	mov    %r12,%rdx
     4f2c:	48 89 ee             	mov    %rbp,%rsi
-    4f2f:	48 8d 3d 26 2c 00 00 	lea    0x2c26(%rip),%rdi        # 7b5c <__func__.5051+0xb5c>
+    4f2f:	48 8d 3d 3a 2c 00 00 	lea    0x2c3a(%rip),%rdi        # 7b70 <__func__.5051+0xb70>
     4f36:	31 c0                	xor    %eax,%eax
     4f38:	e8 70 fa ff ff       	callq  49ad <posix_print_error_and_exit>
     4f3d:	eb 68                	jmp    4fa7 <cmd_read_option_value+0x174>
@@ -5700,7 +5700,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
 	switch (type) {
     4f88:	0f be f2             	movsbl %dl,%esi
 		posix_print_error_and_exit(CMD_TYPE_ERROR, type);
-    4f8b:	48 8d 3d 0c 2c 00 00 	lea    0x2c0c(%rip),%rdi        # 7b9e <__func__.5051+0xb9e>
+    4f8b:	48 8d 3d 20 2c 00 00 	lea    0x2c20(%rip),%rdi        # 7bb2 <__func__.5051+0xbb2>
     4f92:	31 c0                	xor    %eax,%eax
     4f94:	e8 14 fa ff ff       	callq  49ad <posix_print_error_and_exit>
 	if (!error && endptr && *endptr != 0) {
@@ -5796,7 +5796,7 @@ static void cmd_gen_switch_syntax(char *buf, int size,
 			break;
     506e:	e9 5e ff ff ff       	jmpq   4fd1 <cmd_args_set_defaults+0xc>
 			posix_print_error_and_exit(CMD_TYPE_ERROR,
-    5073:	48 8d 3d 24 2b 00 00 	lea    0x2b24(%rip),%rdi        # 7b9e <__func__.5051+0xb9e>
+    5073:	48 8d 3d 38 2b 00 00 	lea    0x2b38(%rip),%rdi        # 7bb2 <__func__.5051+0xbb2>
     507a:	31 c0                	xor    %eax,%eax
     507c:	e8 2c f9 ff ff       	callq  49ad <posix_print_error_and_exit>
 			break;
@@ -5818,8 +5818,8 @@ void cmd_print_switches_help(struct args_struct_t args_struct[])
     508e:	41 56                	push   %r14
   return __fprintf_chk (__stream, __USE_FORTIFY_LEVEL - 1, __fmt,
     5090:	be 01 00 00 00       	mov    $0x1,%esi
-    5095:	48 8d 0d 27 2b 00 00 	lea    0x2b27(%rip),%rcx        # 7bc3 <__func__.5051+0xbc3>
-    509c:	48 8d 15 39 2b 00 00 	lea    0x2b39(%rip),%rdx        # 7bdc <__func__.5051+0xbdc>
+    5095:	48 8d 0d 3b 2b 00 00 	lea    0x2b3b(%rip),%rcx        # 7bd7 <__func__.5051+0xbd7>
+    509c:	48 8d 15 4d 2b 00 00 	lea    0x2b4d(%rip),%rdx        # 7bf0 <__func__.5051+0xbf0>
     50a3:	41 55                	push   %r13
 	int count = 0;
 	int printed_in_line = strlen(_HELP_SWITCH) + 1;
@@ -5870,7 +5870,7 @@ void cmd_print_switches_help(struct args_struct_t args_struct[])
     510c:	48 83 f8 64          	cmp    $0x64,%rax
     5110:	76 19                	jbe    512b <cmd_print_switches_help+0xa1>
     5112:	48 8b 3b             	mov    (%rbx),%rdi
-    5115:	48 8d 15 40 2b 00 00 	lea    0x2b40(%rip),%rdx        # 7c5c <__func__.5051+0xc5c>
+    5115:	48 8d 15 54 2b 00 00 	lea    0x2b54(%rip),%rdx        # 7c70 <__func__.5051+0xc70>
     511c:	31 c0                	xor    %eax,%eax
 			fprintf(stdout, "\n");
 			printed_in_line = 0;
@@ -5879,7 +5879,7 @@ void cmd_print_switches_help(struct args_struct_t args_struct[])
     5126:	e8 65 d3 ff ff       	callq  2490 <__fprintf_chk@plt>
     512b:	48 8b 3b             	mov    (%rbx),%rdi
     512e:	48 89 e9             	mov    %rbp,%rcx
-    5131:	48 8d 15 43 29 00 00 	lea    0x2943(%rip),%rdx        # 7a7b <__func__.5051+0xa7b>
+    5131:	48 8d 15 57 29 00 00 	lea    0x2957(%rip),%rdx        # 7a8f <__func__.5051+0xa8f>
     5138:	31 c0                	xor    %eax,%eax
     513a:	be 01 00 00 00       	mov    $0x1,%esi
 		}
@@ -5901,7 +5901,7 @@ void cmd_print_switches_help(struct args_struct_t args_struct[])
     515c:	48 8b 3b             	mov    (%rbx),%rdi
     515f:	31 c0                	xor    %eax,%eax
     5161:	be 01 00 00 00       	mov    $0x1,%esi
-    5166:	48 8d 15 ef 2a 00 00 	lea    0x2aef(%rip),%rdx        # 7c5c <__func__.5051+0xc5c>
+    5166:	48 8d 15 03 2b 00 00 	lea    0x2b03(%rip),%rdx        # 7c70 <__func__.5051+0xc70>
     516d:	e8 1e d3 ff ff       	callq  2490 <__fprintf_chk@plt>
 	}
 
@@ -5929,7 +5929,7 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
 {
     5194:	f3 0f 1e fa          	endbr64 
     5198:	41 57                	push   %r15
-    519a:	4c 8d 3d bc 2a 00 00 	lea    0x2abc(%rip),%r15        # 7c5d <__func__.5051+0xc5d>
+    519a:	4c 8d 3d d0 2a 00 00 	lea    0x2ad0(%rip),%r15        # 7c71 <__func__.5051+0xc71>
     51a1:	41 56                	push   %r14
     51a3:	41 55                	push   %r13
 	int ret;
@@ -5955,11 +5955,11 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
     51c8:	48 8b 1d d9 4d 00 00 	mov    0x4dd9(%rip),%rbx        # 9fa8 <stdout@GLIBC_2.2.5>
     51cf:	b9 1d 00 00 00       	mov    $0x1d,%ecx
     51d4:	31 c0                	xor    %eax,%eax
-    51d6:	4c 8d 0d 03 2a 00 00 	lea    0x2a03(%rip),%r9        # 7be0 <__func__.5051+0xbe0>
-    51dd:	4c 8d 05 df 29 00 00 	lea    0x29df(%rip),%r8        # 7bc3 <__func__.5051+0xbc3>
+    51d6:	4c 8d 0d 17 2a 00 00 	lea    0x2a17(%rip),%r9        # 7bf4 <__func__.5051+0xbf4>
+    51dd:	4c 8d 05 f3 29 00 00 	lea    0x29f3(%rip),%r8        # 7bd7 <__func__.5051+0xbd7>
     51e4:	be 01 00 00 00       	mov    $0x1,%esi
     51e9:	48 8b 3b             	mov    (%rbx),%rdi
-    51ec:	48 8d 15 ff 29 00 00 	lea    0x29ff(%rip),%rdx        # 7bf2 <__func__.5051+0xbf2>
+    51ec:	48 8d 15 13 2a 00 00 	lea    0x2a13(%rip),%rdx        # 7c06 <__func__.5051+0xc06>
     51f3:	e8 98 d2 ff ff       	callq  2490 <__fprintf_chk@plt>
 		_HELP_SWITCH, _HELP_DESCR);
 
@@ -5983,7 +5983,7 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
     5227:	48 8b 3b             	mov    (%rbx),%rdi
     522a:	31 c0                	xor    %eax,%eax
     522c:	b9 1d 00 00 00       	mov    $0x1d,%ecx
-    5231:	48 8d 15 c5 29 00 00 	lea    0x29c5(%rip),%rdx        # 7bfd <__func__.5051+0xbfd>
+    5231:	48 8d 15 d9 29 00 00 	lea    0x29d9(%rip),%rdx        # 7c11 <__func__.5051+0xc11>
     5238:	be 01 00 00 00       	mov    $0x1,%esi
     523d:	e8 4e d2 ff ff       	callq  2490 <__fprintf_chk@plt>
 				      &args_struct[count]);
@@ -5995,7 +5995,7 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
     5242:	4c 8b 75 30          	mov    0x30(%rbp),%r14
 		total_to_print = strlen(toprint);
     5246:	48 83 c9 ff          	or     $0xffffffffffffffff,%rcx
-    524a:	48 8d 15 b3 29 00 00 	lea    0x29b3(%rip),%rdx        # 7c04 <__func__.5051+0xc04>
+    524a:	48 8d 15 c7 29 00 00 	lea    0x29c7(%rip),%rdx        # 7c18 <__func__.5051+0xc18>
     5251:	41 89 c0             	mov    %eax,%r8d
     5254:	31 c0                	xor    %eax,%eax
     5256:	be 01 00 00 00       	mov    $0x1,%esi
@@ -6025,7 +6025,7 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
     528b:	4d 89 f8             	mov    %r15,%r8
     528e:	b9 1e 00 00 00       	mov    $0x1e,%ecx
     5293:	be 01 00 00 00       	mov    $0x1,%esi
-    5298:	48 8d 15 6b 29 00 00 	lea    0x296b(%rip),%rdx        # 7c0a <__func__.5051+0xc0a>
+    5298:	48 8d 15 7f 29 00 00 	lea    0x297f(%rip),%rdx        # 7c1e <__func__.5051+0xc1e>
     529f:	31 c0                	xor    %eax,%eax
     52a1:	e8 ea d1 ff ff       	callq  2490 <__fprintf_chk@plt>
 			fprintf(stdout, "%*s", _LONG_HELP_ALIGN, "");
@@ -6034,7 +6034,7 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
     52a9:	48 8b 3b             	mov    (%rbx),%rdi
     52ac:	b9 46 00 00 00       	mov    $0x46,%ecx
     52b1:	4d 01 f0             	add    %r14,%r8
-    52b4:	48 8d 15 49 29 00 00 	lea    0x2949(%rip),%rdx        # 7c04 <__func__.5051+0xc04>
+    52b4:	48 8d 15 5d 29 00 00 	lea    0x295d(%rip),%rdx        # 7c18 <__func__.5051+0xc18>
     52bb:	be 01 00 00 00       	mov    $0x1,%esi
     52c0:	31 c0                	xor    %eax,%eax
     52c2:	e8 c9 d1 ff ff       	callq  2490 <__fprintf_chk@plt>
@@ -6048,14 +6048,14 @@ void cmd_print_long_help(struct args_struct_t args_struct[])
     52cd:	41 ff c5             	inc    %r13d
     52d0:	e9 23 ff ff ff       	jmpq   51f8 <cmd_print_long_help+0x64>
     52d5:	48 8b 3b             	mov    (%rbx),%rdi
-    52d8:	48 8d 15 7d 29 00 00 	lea    0x297d(%rip),%rdx        # 7c5c <__func__.5051+0xc5c>
+    52d8:	48 8d 15 91 29 00 00 	lea    0x2991(%rip),%rdx        # 7c70 <__func__.5051+0xc70>
     52df:	be 01 00 00 00       	mov    $0x1,%esi
     52e4:	31 c0                	xor    %eax,%eax
     52e6:	e8 a5 d1 ff ff       	callq  2490 <__fprintf_chk@plt>
     52eb:	48 8b 3b             	mov    (%rbx),%rdi
     52ee:	31 c0                	xor    %eax,%eax
     52f0:	be 01 00 00 00       	mov    $0x1,%esi
-    52f5:	48 8d 15 12 29 00 00 	lea    0x2912(%rip),%rdx        # 7c0e <__func__.5051+0xc0e>
+    52f5:	48 8d 15 26 29 00 00 	lea    0x2926(%rip),%rdx        # 7c22 <__func__.5051+0xc22>
     52fc:	e8 8f d1 ff ff       	callq  2490 <__fprintf_chk@plt>
 	}
 	fprintf(stdout, "\n");
@@ -6150,7 +6150,7 @@ bool cmd_parse_one_arg(char *argv, struct args_struct_t args_struct[])
     539a:	c6 06 01             	movb   $0x1,(%rsi)
     539d:	eb 1f                	jmp    53be <cmd_parse_one_arg+0x99>
 				posix_print_error_and_exit(CMD_ERR_BOOL_SWI);
-    539f:	48 8d 3d b8 28 00 00 	lea    0x28b8(%rip),%rdi        # 7c5e <__func__.5051+0xc5e>
+    539f:	48 8d 3d cc 28 00 00 	lea    0x28cc(%rip),%rdi        # 7c72 <__func__.5051+0xc72>
     53a6:	31 c0                	xor    %eax,%eax
     53a8:	e8 00 f6 ff ff       	callq  49ad <posix_print_error_and_exit>
     53ad:	eb 0f                	jmp    53be <cmd_parse_one_arg+0x99>
@@ -6272,7 +6272,7 @@ void native_add_command_line_opts(struct args_struct_t *args)
     5466:	48 85 c0             	test   %rax,%rax
     5469:	75 0e                	jne    5479 <native_add_command_line_opts+0x6d>
 			posix_print_error_and_exit("Could not allocate memory");
-    546b:	48 8d 3d 37 28 00 00 	lea    0x2837(%rip),%rdi        # 7ca9 <__func__.5051+0xca9>
+    546b:	48 8d 3d 4b 28 00 00 	lea    0x284b(%rip),%rdi        # 7cbd <__func__.5051+0xcbd>
     5472:	e8 36 f5 ff ff       	callq  49ad <posix_print_error_and_exit>
     5477:	eb 07                	jmp    5480 <native_add_command_line_opts+0x74>
 		} else {
@@ -6337,7 +6337,7 @@ void native_handle_cmd_line(int argc, char *argv[])
 	for (i = 1; i < argc; i++) {
 
 		if ((cmd_is_option(argv[i], "testargs", 0))) {
-    54c9:	4c 8d 3d f3 27 00 00 	lea    0x27f3(%rip),%r15        # 7cc3 <__func__.5051+0xcc3>
+    54c9:	4c 8d 3d 07 28 00 00 	lea    0x2807(%rip),%r15        # 7cd7 <__func__.5051+0xcd7>
 {
     54d0:	41 56                	push   %r14
     54d2:	41 55                	push   %r13
@@ -6399,7 +6399,7 @@ void native_handle_cmd_line(int argc, char *argv[])
     5556:	e8 2f fb ff ff       	callq  508a <cmd_print_switches_help>
 	posix_print_error_and_exit("Incorrect option '%s'. Did you misspell it?"
     555b:	49 8b 34 ec          	mov    (%r12,%rbp,8),%rsi
-    555f:	48 8d 3d 66 27 00 00 	lea    0x2766(%rip),%rdi        # 7ccc <__func__.5051+0xccc>
+    555f:	48 8d 3d 7a 27 00 00 	lea    0x277a(%rip),%rdi        # 7ce0 <__func__.5051+0xce0>
     5566:	31 c0                	xor    %eax,%eax
     5568:	e8 40 f4 ff ff       	callq  49ad <posix_print_error_and_exit>
 	for (i = 1; i < argc; i++) {
@@ -6601,7 +6601,7 @@ FUNC_NORETURN void z_cstart(void)
 	_kernel.ready_q.cache = &z_main_thread;
     56a8:	48 8d 2d 11 5f 00 00 	lea    0x5f11(%rip),%rbp        # b5c0 <z_main_thread>
 	stack_ptr = z_setup_new_thread(&z_main_thread, z_main_stack,
-    56af:	48 8d 05 d2 26 00 00 	lea    0x26d2(%rip),%rax        # 7d88 <__func__.5051+0xd88>
+    56af:	48 8d 05 e6 26 00 00 	lea    0x26e6(%rip),%rax        # 7d9c <__func__.5051+0xd9c>
     56b6:	48 8d 35 a3 4d 00 00 	lea    0x4da3(%rip),%rsi        # a460 <z_main_stack>
     56bd:	48 8d 0d 49 ff ff ff 	lea    -0xb7(%rip),%rcx        # 560d <bg_thread_main>
 	_kernel.ready_q.cache = &z_main_thread;
@@ -6671,9 +6671,9 @@ static inline void sys_dlist_init(sys_dlist_t *list)
     5756:	e8 43 e3 ff ff       	callq  3a9e <arch_switch_to_main_thread>
 	CODE_UNREACHABLE; /* LCOV_EXCL_LINE */
     575b:	ba 27 01 00 00       	mov    $0x127,%edx
-    5760:	48 8d 35 26 26 00 00 	lea    0x2626(%rip),%rsi        # 7d8d <__func__.5051+0xd8d>
+    5760:	48 8d 35 3a 26 00 00 	lea    0x263a(%rip),%rsi        # 7da1 <__func__.5051+0xda1>
     5767:	31 c0                	xor    %eax,%eax
-    5769:	48 8d 3d 2d 1a 00 00 	lea    0x1a2d(%rip),%rdi        # 719d <__func__.5051+0x19d>
+    5769:	48 8d 3d 41 1a 00 00 	lea    0x1a41(%rip),%rdi        # 71b1 <__func__.5051+0x1b1>
     5770:	e8 38 f2 ff ff       	callq  49ad <posix_print_error_and_exit>
 
 0000000000005775 <z_is_t1_higher_prio_than_t2>:
@@ -7822,9 +7822,9 @@ FUNC_NORETURN void z_self_abort(void)
 	__ASSERT(false, "should never get here");
 	CODE_UNREACHABLE; /* LCOV_EXCL_LINE */
     5f6e:	ba 31 00 00 00       	mov    $0x31,%edx
-    5f73:	48 8d 35 34 1e 00 00 	lea    0x1e34(%rip),%rsi        # 7dae <__func__.5051+0xdae>
+    5f73:	48 8d 35 48 1e 00 00 	lea    0x1e48(%rip),%rsi        # 7dc2 <__func__.5051+0xdc2>
     5f7a:	31 c0                	xor    %eax,%eax
-    5f7c:	48 8d 3d 1a 12 00 00 	lea    0x121a(%rip),%rdi        # 719d <__func__.5051+0x19d>
+    5f7c:	48 8d 3d 2e 12 00 00 	lea    0x122e(%rip),%rdi        # 71b1 <__func__.5051+0x1b1>
     5f83:	e8 25 ea ff ff       	callq  49ad <posix_print_error_and_exit>
 
 0000000000005f88 <boot_banner>:
@@ -7841,10 +7841,10 @@ void boot_banner(void)
 #if defined(CONFIG_BOOT_BANNER)
 #ifdef BUILD_VERSION
 	printk("*** Booting Zephyr OS build %s %s ***\n",
-    5f8c:	48 8d 15 ca 1c 00 00 	lea    0x1cca(%rip),%rdx        # 7c5d <__func__.5051+0xc5d>
-    5f93:	48 8d 35 3d 1e 00 00 	lea    0x1e3d(%rip),%rsi        # 7dd7 <__func__.5051+0xdd7>
+    5f8c:	48 8d 15 de 1c 00 00 	lea    0x1cde(%rip),%rdx        # 7c71 <__func__.5051+0xc71>
+    5f93:	48 8d 35 51 1e 00 00 	lea    0x1e51(%rip),%rsi        # 7deb <__func__.5051+0xdeb>
     5f9a:	31 c0                	xor    %eax,%eax
-    5f9c:	48 8d 3d 54 1e 00 00 	lea    0x1e54(%rip),%rdi        # 7df7 <__func__.5051+0xdf7>
+    5f9c:	48 8d 3d 68 1e 00 00 	lea    0x1e68(%rip),%rdi        # 7e0b <__func__.5051+0xe0b>
     5fa3:	e9 2c c7 ff ff       	jmpq   26d4 <printk>
 
 0000000000005fa8 <elapsed>:

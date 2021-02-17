@@ -1935,7 +1935,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
                 0x0000000000007000                . = ALIGN (CONSTANT (MAXPAGESIZE))
                 0x0000000000007000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
 
-.rodata         0x0000000000007000      0xe1e
+.rodata         0x0000000000007000      0xe32
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*) SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
  .rodata.__func__.5051
                 0x0000000000007000       0x1d zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(irq_handler.c.obj)
@@ -1946,113 +1946,113 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
                 0x0000000000007050       0xfc zephyr/libzephyr.a(cbprintf_complete.c.obj)
  .rodata.cst4   0x000000000000714c        0x8 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(hw_models_top.c.obj)
  .rodata.zephyr_app_main.str1.1
-                0x0000000000007154       0x20 app/libapp.a(main.c.obj)
+                0x0000000000007154       0x34 app/libapp.a(main.c.obj)
  .rodata.z_thread_entry.str1.1
-                0x0000000000007174       0x4e zephyr/libzephyr.a(thread_entry.c.obj)
+                0x0000000000007188       0x4e zephyr/libzephyr.a(thread_entry.c.obj)
  .rodata.cbvprintf.str1.1
-                0x00000000000071c2        0x6 zephyr/libzephyr.a(cbprintf_complete.c.obj)
+                0x00000000000071d6        0x6 zephyr/libzephyr.a(cbprintf_complete.c.obj)
  .rodata.str1.1
-                0x00000000000071c8        0xa zephyr/libzephyr.a(sys_clock_init.c.obj)
+                0x00000000000071dc        0xa zephyr/libzephyr.a(sys_clock_init.c.obj)
  .rodata.pc_safe_call.str1.1
-                0x00000000000071d2       0x1a zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x00000000000071e6       0x1a zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.posix_preexit_cleanup.str1.1
-                0x00000000000071ec       0x23 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x0000000000007200       0x23 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.posix_thread_starter.str1.1
-                0x000000000000720f       0x21 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x0000000000007223       0x21 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.posix_swap.str1.1
-                0x0000000000007230       0x26 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x0000000000007244       0x26 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.posix_new_thread.str1.1
-                0x0000000000007256       0x8c zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x000000000000726a       0x8c zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.posix_core_clean_up.str1.1
-                0x00000000000072e2       0x34 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x00000000000072f6       0x34 zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.z_impl_k_thread_abort.str1.1
-                0x0000000000007316       0x7c zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
+                0x000000000000732a       0x7c zephyr/arch/arch/posix/core/libarch__posix__core.a(posix_core.c.obj)
  .rodata.pc_safe_call.str1.1
-                0x0000000000007392       0x1a zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
+                0x00000000000073a6       0x1a zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
  .rodata.zephyr_wrapper.str1.1
-                0x0000000000007392       0x3c zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
+                0x00000000000073a6       0x3c zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
  .rodata.posix_change_cpu_state_and_wait.str1.1
-                0x00000000000073ce       0x22 zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
+                0x00000000000073e2       0x22 zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
  .rodata.posix_boot_cpu.str1.1
-                0x00000000000073f0       0x3b zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
+                0x0000000000007404       0x3b zephyr/soc/posix/inf_clock/libsoc__posix__inf_clock.a(soc.c.obj)
  .rodata.hwm_set_sig_handler.str1.1
-                0x000000000000742b       0x57 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(hw_models_top.c.obj)
+                0x000000000000743f       0x57 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(hw_models_top.c.obj)
                                          0x71 (size before relaxing)
  .rodata.hwm_main_loop.str1.1
-                0x0000000000007482       0x65 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(hw_models_top.c.obj)
+                0x0000000000007496       0x65 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(hw_models_top.c.obj)
  .rodata.cmd_stop_at_found.str1.1
-                0x00000000000074e7       0x26 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
+                0x00000000000074fb       0x26 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
  .rodata.cmd_rt_ratio_found.str1.1
-                0x000000000000750d       0x3c zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
+                0x0000000000007521       0x3c zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
  .rodata.cmd_rt_drift_found.str1.1
-                0x0000000000007549       0x3d zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
+                0x000000000000755d       0x3d zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
  .rodata.str1.1
-                0x0000000000007586      0x3d9 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
+                0x000000000000759a      0x3d9 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(timer_model.c.obj)
                                         0x3e8 (size before relaxing)
  .rodata.posix_irq_handler.str1.1
-                0x000000000000795f       0x2e zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(irq_handler.c.obj)
+                0x0000000000007973       0x2e zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(irq_handler.c.obj)
  .rodata.posix_irq_handler_im_from_sw.str1.1
-                0x000000000000798d       0x35 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(irq_handler.c.obj)
+                0x00000000000079a1       0x35 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(irq_handler.c.obj)
  .rodata.str1.1
-                0x00000000000079c2       0xb8 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(tracing.c.obj)
+                0x00000000000079d6       0xb8 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(tracing.c.obj)
                                          0xbe (size before relaxing)
  .rodata.cmd_gen_switch_syntax.constprop.0.str1.1
-                0x0000000000007a7a       0x75 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007a8e       0x75 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
                                          0x77 (size before relaxing)
  .rodata.cmd_is_option.str1.1
-                0x0000000000007aef       0x5a zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007b03       0x5a zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
  .rodata.cmd_is_help_option.str1.1
-                0x0000000000007b49        0x4 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007b5d        0x4 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
                                           0x9 (size before relaxing)
  .rodata.cmd_read_option_value.str1.1
-                0x0000000000007b4d       0x76 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007b61       0x76 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
  .rodata.cmd_print_switches_help.str1.1
-                0x0000000000007bc3       0x1d zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007bd7       0x1d zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
                                          0x22 (size before relaxing)
  .rodata.cmd_print_long_help.str1.1
-                0x0000000000007be0       0x7e zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007bf4       0x7e zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
                                          0x7f (size before relaxing)
  .rodata.cmd_parse_one_arg.str1.1
-                0x0000000000007c5e       0x4b zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
+                0x0000000000007c72       0x4b zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline_common.c.obj)
  .rodata.native_add_command_line_opts.str1.1
-                0x0000000000007ca9       0x1a zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline.c.obj)
+                0x0000000000007cbd       0x1a zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline.c.obj)
  .rodata.native_handle_cmd_line.str1.1
-                0x0000000000007cc3       0x5f zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline.c.obj)
+                0x0000000000007cd7       0x5f zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline.c.obj)
  .rodata.str1.1
-                0x0000000000007d22       0x66 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline.c.obj)
+                0x0000000000007d36       0x66 zephyr/boards/posix/native_posix/libboards__posix__native_posix.a(cmdline.c.obj)
  .rodata.z_cstart.str1.1
-                0x0000000000007d88       0x26 zephyr/kernel/libkernel.a(init.c.obj)
+                0x0000000000007d9c       0x26 zephyr/kernel/libkernel.a(init.c.obj)
                                          0x4b (size before relaxing)
  .rodata.z_self_abort.str1.1
-                0x0000000000007dae       0x29 zephyr/kernel/libkernel.a(thread_abort.c.obj)
+                0x0000000000007dc2       0x29 zephyr/kernel/libkernel.a(thread_abort.c.obj)
                                          0x4e (size before relaxing)
  .rodata.boot_banner.str1.1
-                0x0000000000007dd7       0x47 zephyr/kernel/libkernel.a(banner.c.obj)
+                0x0000000000007deb       0x47 zephyr/kernel/libkernel.a(banner.c.obj)
                                          0x48 (size before relaxing)
 
 .rodata1
  *(SORT_BY_ALIGNMENT(.rodata1))
 
-.eh_frame_hdr   0x0000000000007e20       0x3c
+.eh_frame_hdr   0x0000000000007e34       0x3c
  *(SORT_BY_ALIGNMENT(.eh_frame_hdr))
- .eh_frame_hdr  0x0000000000007e20       0x3c /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
-                0x0000000000007e20                __GNU_EH_FRAME_HDR
+ .eh_frame_hdr  0x0000000000007e34       0x3c /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+                0x0000000000007e34                __GNU_EH_FRAME_HDR
  *(SORT_BY_ALIGNMENT(.eh_frame_entry) SORT_BY_ALIGNMENT(.eh_frame_entry.*))
 
-.eh_frame       0x0000000000007e60       0xe8
+.eh_frame       0x0000000000007e70       0xe8
  *(SORT_BY_ALIGNMENT(.eh_frame))
- .eh_frame      0x0000000000007e60       0x30 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .eh_frame      0x0000000000007e70       0x30 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
                                          0x2c (size before relaxing)
- *fill*         0x0000000000007e90        0x0 
- .eh_frame      0x0000000000007e90       0x28 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ *fill*         0x0000000000007ea0        0x0 
+ .eh_frame      0x0000000000007ea0       0x28 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
                                          0x40 (size before relaxing)
- .eh_frame      0x0000000000007eb8       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .eh_frame      0x0000000000007ec8       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
                                          0x30 (size before relaxing)
- .eh_frame      0x0000000000007ed0       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
+ .eh_frame      0x0000000000007ee0       0x18 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o
                                          0x30 (size before relaxing)
- .eh_frame      0x0000000000007ee8       0x5c /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
+ .eh_frame      0x0000000000007ef8       0x5c /usr/lib/x86_64-linux-gnu/libc_nonshared.a(elf-init.oS)
                                          0x78 (size before relaxing)
- .eh_frame      0x0000000000007f44        0x4 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
+ .eh_frame      0x0000000000007f54        0x4 /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o
  *(SORT_BY_ALIGNMENT(.eh_frame.*))
 
 .gcc_except_table

@@ -9,5 +9,5 @@
 
 void main(void)
 {
-	printk("DU Stinksch %s\n", CONFIG_BOARD);
+	printk("Lezuo Stinkt: Auf diesem Board: %s\n", CONFIG_BOARD);
 }
