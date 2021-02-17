@@ -6,8 +6,13 @@
 
 #include <zephyr.h>
 #include <sys/printk.h>
+#include <device.h>
+#include <gpio.h>
+#include <pthread.h> 
+
 
 void main(void)
 {
 	printk("Lezuo Stinkt: Auf diesem Board: %s\n", CONFIG_BOARD);
 }
+
