@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{Aufgabenstellung}{}% 1
+\BOOKMARK [1][-]{section.2}{RS485}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Generelles}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Wie funktioniert es?}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Wie wird der MAX485 angeschlossen}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Einteilung | Was man wissen muss}{}% 6
+\BOOKMARK [1][-]{section.4}{Clock}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Clock-Code}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{GPIO}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{GPIO-Erkl\344rung}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{GPIO-Code}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{USART}{}% 12
+\BOOKMARK [2][-]{subsection.6.1}{Baudrate-Berechnung-Register-Setzen}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.2}{Weitere USART einstellungen}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.3}{USART-Initiallisierung/Konfiguration|Code}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.4}{USART-InterruptHandler}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{ADC}{}% 17
+\BOOKMARK [2][-]{subsection.7.1}{Erkl\344rung}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.2}{Register}{section.7}% 19
+\BOOKMARK [3][-]{subsubsection.7.2.1}{ADC\137ISR | ADC Interrupts}{subsection.7.2}% 20
+\BOOKMARK [3][-]{subsubsection.7.2.2}{ADC\137IER | ADC enable Interrupts}{subsection.7.2}% 21
+\BOOKMARK [3][-]{subsubsection.7.2.3}{ADC\137CR | ADC kalibrieren, aktivieren, starten}{subsection.7.2}% 22
+\BOOKMARK [3][-]{subsubsection.7.2.4}{ADC\137CFGR2 | Clock Einstellung}{subsection.7.2}% 23
+\BOOKMARK [3][-]{subsubsection.7.2.5}{ADC\137CHSELR | ADC Input Channel}{subsection.7.2}% 24
+\BOOKMARK [3][-]{subsubsection.7.2.6}{ADC\137DR | 16 Bit Ergebniss der Umnwandlung}{subsection.7.2}% 25
+\BOOKMARK [2][-]{subsection.7.3}{Konfiguration}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.4}{ADC-Initiallisierungs-Code}{section.7}% 27
+\BOOKMARK [2][-]{subsection.7.5}{ADC-Interrupt-Handler-Code}{section.7}% 28
+\BOOKMARK [1][-]{section.8}{NVIC}{}% 29
+\BOOKMARK [2][-]{subsection.8.1}{Wir wird er verwendet}{section.8}% 30
+\BOOKMARK [2][-]{subsection.8.2}{NVIC-Code}{section.8}% 31
+\BOOKMARK [1][-]{section.9}{Gesamtes-Programm}{}% 32
+\BOOKMARK [2][-]{subsection.9.1}{Headerfile}{section.9}% 33
+\BOOKMARK [2][-]{subsection.9.2}{Main}{section.9}% 34
+\BOOKMARK [1][-]{section.10}{Anhang}{}% 35
+\BOOKMARK [2][-]{subsection.10.1}{Verlinkungen}{section.10}% 36

@@ -1,0 +1,37 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Aufgabenstellung}{1}{section.1}%
+\contentsline {section}{\numberline {2}RS485}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Generelles}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Wie funktioniert es?}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Wie wird der MAX485 angeschlossen}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Einteilung | Was man wissen muss}{5}{section.3}%
+\contentsline {section}{\numberline {4}Clock}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Clock-Code}{7}{subsection.4.1}%
+\contentsline {section}{\numberline {5}GPIO}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}GPIO-Erklärung}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}GPIO-Code}{12}{subsection.5.2}%
+\contentsline {section}{\numberline {6}USART}{12}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Baudrate-Berechnung-Register-Setzen}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Weitere USART einstellungen}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}USART-Initiallisierung/Konfiguration|Code}{14}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}USART-InterruptHandler}{14}{subsection.6.4}%
+\contentsline {section}{\numberline {7}ADC}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Erklärung}{16}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Register}{16}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}ADC\_ISR | ADC Interrupts}{16}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}ADC\_IER | ADC enable Interrupts}{17}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}ADC\_CR | ADC kalibrieren, aktivieren, starten}{17}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}ADC\_CFGR2 | Clock Einstellung}{18}{subsubsection.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.5}ADC\_CHSELR | ADC Input Channel}{18}{subsubsection.7.2.5}%
+\contentsline {subsubsection}{\numberline {7.2.6}ADC\_DR | 16 Bit Ergebniss der Umnwandlung}{19}{subsubsection.7.2.6}%
+\contentsline {subsection}{\numberline {7.3}Konfiguration}{19}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}ADC-Initiallisierungs-Code}{20}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}ADC-Interrupt-Handler-Code}{21}{subsection.7.5}%
+\contentsline {section}{\numberline {8}NVIC}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Wir wird er verwendet}{22}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}NVIC-Code}{24}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Gesamtes-Programm}{25}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Headerfile}{25}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Main}{29}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Anhang}{34}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Verlinkungen}{34}{subsection.10.1}%

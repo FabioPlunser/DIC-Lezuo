@@ -1,0 +1,14 @@
+uint32_t* usart_cr1;
+
+usart_cr1 = 0x40013800 + 0x00;
+
+uint32_t reg_content;
+
+reg_content = *usart_cr1;
+
+reg_conent |= 0x00000001; //enabled Usart
+
+*usart_cr1 = reg_content;
+
+
+

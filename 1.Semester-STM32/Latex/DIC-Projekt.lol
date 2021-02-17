@@ -1,0 +1,9 @@
+\contentsline {lstlisting}{\numberline {1}init-CLOCK}{7}{lstlisting.1}%
+\contentsline {lstlisting}{\numberline {2}GPIO-Code}{12}{lstlisting.2}%
+\contentsline {lstlisting}{\numberline {3}Init-UART}{14}{lstlisting.3}%
+\contentsline {lstlisting}{\numberline {4}Init-UART}{14}{lstlisting.4}%
+\contentsline {lstlisting}{\numberline {5}ADC-Initiallisierungs-Code}{20}{lstlisting.5}%
+\contentsline {lstlisting}{\numberline {6}ADC-Interrupt-Handler-Code}{21}{lstlisting.6}%
+\contentsline {lstlisting}{\numberline {7}NVIC-enable-interrupts}{24}{lstlisting.7}%
+\contentsline {lstlisting}{\numberline {8}Headerfile}{25}{lstlisting.8}%
+\contentsline {lstlisting}{\numberline {9}Gesamter-Code}{29}{lstlisting.9}%

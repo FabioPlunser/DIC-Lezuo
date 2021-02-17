@@ -1,0 +1,61 @@
+RCC_CFGR3 beio 0x30,  USART1SW = 01 
+USART_BRR offset: 0x0C = D0
+
+Hex aufbau 0x000 000
+
+
+Weitere Einstellungen, USART parity control
+
+GPIO:
+0x4800 0000 - 0x4800 03FF im AHB2 Bus
+Pin PA7 is auf Packet(TSSOP20) pin 13
+Pn PA6 ist auf Packet(TSSOP20) pin 12    
+
+Weitere CLock sachen: 
+0x4002 1000 - 0x4002 13FF RCC
+RCC_AHB-GPIOA
+0x14 RCC_AHBENR
+
+RCC_APB-USART-1 0x4001 3800 - 0x4001 3BFF  
+0x1C RCC_APB1ENR
+
+USART-Write:
+602
+
+USART-Read:
+605
+
+
+Hardware interrupt selection
+To configure a line as interrupt source, use the following procedure:
+ Configure the corresponding mask bit in the EXTI_IMR register.
+ Configure the Trigger Selection bits of the Interrupt line (EXTI_RTSR and EXTI_FTSR)
+ Configure the enable and mask bits that control the NVIC IRQ channel mapped to the
+EXTI so that an interrupt coming from one of the EXTI line can be correctly
+acknowledged.
+
+
+For the ADC, configure the desired I/O in analog mode in the GPIOx_MODER
+register and configure the required function in the ADC registers.
+
+
+Follow this procedure to enable the ADC:
+1. Clear the ADRDY bit in ADC_ISR register by programming this bit to 1.
+2. Set ADEN=1 in the ADC_CR register.
+3. Wait until ADRDY=1 in the ADC_ISR register and continue to write ADEN=1 (ADRDY
+is set after the ADC startup time). This can be handled by interrupt if the interrupt is
+enabled by setting the ADRDYIE bit in the ADC_IER register.
+
+
+Software must write to the ADCAL and ADEN bits in the ADC_CR register if the ADC is
+disabled (ADEN must be 0).
+Software must only write to the ADSTART and ADDIS bits in the ADC_CR register only if
+the ADC is enabled and there is no pending request to disable the ADC (ADEN = 1 and
+ADDIS = 0).
+For all the other control bits in the ADC_IER, ADC_CFGRi, ADC_SMPR, ADC_TR,
+ADC_CHSELR and ADC_CCR registers, software must only write to the configuration
+control bits if the ADC is enabled (ADEN = 1) and if there is no conversion ongoing
+(ADSTART = 0).
+Software must only write to the ADSTP bit in the ADC_CR register if the ADC is enabled
+(and possibly converting) and there is no pending request to disable the ADC (ADSTART =
+1 and ADDIS = 0)
