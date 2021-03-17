@@ -8,6 +8,19 @@ SOURCE_DIR=src/
 # Create List of Files that impact the Executable
 SOURCE_FILES=$(wildcard $(PRJ_DIR)/*.*) $(wildcard $(PRJ_DIR)/*/*.*)
 
+# Setup Code specific Paths
+PRJ_DIR=code/
+ABS_PRJ_DIR=$(abspath $(PRJ_DIR))
+SOURCE_DIR=src/
+# Create List of Files that impact the Executable
+SOURCE_FILES=$(wildcard $(PRJ_DIR)/*.*) $(wildcard $(PRJ_DIR)/*/*.*)
+
+# Setup Zephyr specific Paths
+ZEPHYR_HOME=~/zephyrproject/zephyr/
+BUILD_DIR=$(ZEPHYR_HOME)build
+EXEC_OUT=$(ZEPHYR_HOME)build/zephyr/zephyr.elf
+
+
 # Setup Zephyr specific Paths
 ZEPHYR_HOME=~/zephyrproject/zephyr/
 BUILD_DIR=$(ZEPHYR_HOME)build
@@ -23,15 +36,13 @@ $(EXEC_OUT): $(SOURCE_FILES)
 	@cd $(ZEPHYR_HOME) && west build -p auto -b $(BOARD_VAR) $(ABS_PRJ_DIR)
 	@echo "west build -p auto -b $(BOARD_VAR) $(ABS_PRJ_DIR)"
 
+
+
 # Run Executable
 run: $(EXEC_OUT)
 	@echo "Running Project"
 	@$(EXEC_OUT)
 
-# Run Executable and Python-Test in two seperate Threads
-# They are connnected via the UART at /dev/pts/0
-test: $(EXEC_OUT)
-	@$(MAKE) -s run python_test -j2
 	
 # Clean generated Files
 clean:
