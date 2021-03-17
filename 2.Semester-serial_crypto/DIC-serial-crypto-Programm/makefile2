@@ -1,4 +1,12 @@
-BOARD_VAR=native_posix_64
+
+#Select Board
+32BIT=native_posix
+64BIT=native_posix_64
+ifeq ("$(BOARD)","32")
+BOARD_VAR=$(32BIT)
+else
+BOARD_VAR=$(64BIT)
+endif
 
 
 # Setup Code specific Paths
@@ -12,6 +20,9 @@ SOURCE_FILES=$(wildcard $(PRJ_DIR)/*.*) $(wildcard $(PRJ_DIR)/*/*.*)
 ZEPHYR_HOME=~/zephyrproject/zephyr/
 BUILD_DIR=$(ZEPHYR_HOME)build
 EXEC_OUT=$(ZEPHYR_HOME)build/zephyr/zephyr.elf
+# TEST_SCRIPT=$(abspath test.py)
+# UART_PTY=/dev/pts/0
+# TEST_COMMAND=python3 $(TEST_SCRIPT) $(TEST_SUITE) -v $(UART_PTY)
 
 # Build Executable
 all: $(EXEC_OUT)
@@ -23,16 +34,14 @@ $(EXEC_OUT): $(SOURCE_FILES)
 	@cd $(ZEPHYR_HOME) && west build -p auto -b $(BOARD_VAR) $(ABS_PRJ_DIR)
 	@echo "west build -p auto -b $(BOARD_VAR) $(ABS_PRJ_DIR)"
 
+
 # Run Executable
 run: $(EXEC_OUT)
 	@echo "Running Project"
-	@$(EXEC_OUT)
+	@$(EXEC_OUT) $(EXEC_OPTIONS)
 
-# Run Executable and Python-Test in two seperate Threads
-# They are connnected via the UART at /dev/pts/0
-test: $(EXEC_OUT)
-	@$(MAKE) -s run python_test -j2
-	
+ ------------------------------------------------------------------------------
+
 # Clean generated Files
 clean:
 	@echo "Cleaning Build-Directory"
