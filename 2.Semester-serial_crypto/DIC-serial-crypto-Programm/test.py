@@ -30,7 +30,7 @@ class test_timeout:
 class MyTests(unittest.TestCase):
     SERDEV = '/dev/null'
 
-    def test_00_connection_alive(self):
+    def test_00(self):
         with serial.serial_for_url("spy://{}".format(self.SERDEV)) as ser:
             ser.reset_input_buffer()
 
@@ -39,22 +39,25 @@ class MyTests(unittest.TestCase):
                 ser.write(b'.')
                 ser.timeout = 0.5
                 reply = ser.read(2)
+                print(f"Reply{reply}")
                 self.assertEqual(reply, b'.\n')
 
-    def test_01_availibility(self):
+    def test_01(self):
         with serial.serial_for_url("spy://{}".format(self.SERDEV)) as ser:
             ser.write(b'P')
             ser.timeout = 1
             reply = ser.read(100)
+            print(f"Reply{reply}")
             self.assertEqual(reply, b"PROCESSING AVAILABLE\n")
 
-    def test_02_blocking(self):
+    def test_02(self):
         with serial.serial_for_url("spy://{}".format(self.SERDEV)) as ser:
             ser.write(b'W')
 
             ser.write(b'P')
             ser.timeout = 1
             reply = ser.read(100)
+            print(f"Reply{reply}")
             self.assertEqual(reply, b"")    # the first one gets queued
 
             with test_timeout(12):
@@ -68,7 +71,7 @@ class MyTests(unittest.TestCase):
                     if reply == b".\nBUSY\nPROCESSING AVAILABLE\n":
                         break               # break loop before timeout kills us
 
-    def test_03_decrypt_fault(self):
+    def test_03(self):
         with serial.serial_for_url("spy://{}".format(self.SERDEV)) as ser:
             # bad length for cipher
             cyphertext = "AAE3"
@@ -81,10 +84,11 @@ class MyTests(unittest.TestCase):
 
             ser.timeout = 1
             reply = ser.read(100)
+            print(f"Reply{reply}")
             self.assertEqual(reply, b'XERROR\n')
         
 
-    def test_04_decrypt_defaults(self):
+    def test_04(self):
         with serial.serial_for_url("spy://{}".format(self.SERDEV)) as ser:
             # deciphers to "Schoene Crypto Welt" with IV=BBBBBBBBBBBBBBBB and key=BBBBBBBBBBBBBBBB aes128-cbc
             cyphertext = "AAE365272C81078AB6116B361831D0F6A5D3C8587E946B530B7957543107F15E"
@@ -97,9 +101,10 @@ class MyTests(unittest.TestCase):
 
             ser.timeout = 1
             reply = ser.read(100)
+            print(f"Reply{reply}")
             self.assertEqual(reply, b'D Schoene Crypto Welt\r\r\r\r\r\r\r\r\r\r\r\r\r\x00')
 
-    def test_05_decrypt_key_iv(self):
+    def test_05(self):
         with serial.serial_for_url("spy://{}".format(self.SERDEV)) as ser:
             for d in b'KAAAAAAAAAAAAAAAAX':
                 ser.write(bytes([d]))
@@ -122,6 +127,7 @@ class MyTests(unittest.TestCase):
 
             ser.timeout = 1
             reply = ser.read(100)
+            print(f"Reply{reply}")
             self.assertEqual(reply, b'D Schoene Crypto Welt\r\r\r\r\r\r\r\r\r\r\r\r\r\x00')
 
 
