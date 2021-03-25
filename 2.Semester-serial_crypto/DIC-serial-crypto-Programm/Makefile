@@ -35,8 +35,27 @@ $(EXEC_OUT): $(SOURCE_FILES)
 	@echo "Building Project"
 	@cd $(ZEPHYR_HOME) && west build -p auto -b $(BOARD_VAR) $(ABS_PRJ_DIR)
 	@echo "west build -p auto -b $(BOARD_VAR) $(ABS_PRJ_DIR)"
+ 
+test0: 
+	./test.py MyTests.test_00 -v /dev/pts/$(UART)
 
+test1: 
+	./test.py MyTests.test_01 -v /dev/pts/$(UART)
 
+test2: 
+	./test.py MyTests.test_02 -v /dev/pts/$(UART)
+
+test3: 
+	./test.py MyTests.test_03 -v /dev/pts/$(UART)
+
+test4: 
+	./test.py MyTests.test_04 -v /dev/pts/$(UART)
+
+test5:
+	./test.py MyTests.test_05 -v /dev/pts/$(UART)
+
+testall:
+	./test.py -v /dev/pts/$(UART)
 
 # Run Executable
 run: $(EXEC_OUT)
