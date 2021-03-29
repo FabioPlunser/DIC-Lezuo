@@ -12,37 +12,24 @@ K_MSGQ_DEFINE(crypto_queue, sizeof(char* ), q_max_msgs, q_align);
 
 const struct device * uart_dev;
 const struct device * crypto_dev;
-enum state status = INIT;
-
+enum state st_state = INIT;
+enum op operation;
 bool processing_busy = false;  
 //https://docs.zephyrproject.org/2.3.0/reference/peripherals/uart.html#_CPPv411uart_config
 
 //Random ciphertext key and plaintext from cbc sample
-static const uint8_t cbc_ciphertext[80] = {
-	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a, 0x0b,
-	0x0c, 0x0d, 0x0e, 0x0f, 0x76, 0x49, 0xab, 0xac, 0x81, 0x19, 0xb2, 0x46,
-	0xce, 0xe9, 0x8e, 0x9b, 0x12, 0xe9, 0x19, 0x7d, 0x50, 0x86, 0xcb, 0x9b,
-	0x50, 0x72, 0x19, 0xee, 0x95, 0xdb, 0x11, 0x3a, 0x91, 0x76, 0x78, 0xb2,
-	0x73, 0xbe, 0xd6, 0xb8, 0xe3, 0xc1, 0x74, 0x3b, 0x71, 0x16, 0xe6, 0x9e,
-	0x22, 0x22, 0x95, 0x16, 0x3f, 0xf1, 0xca, 0xa1, 0x68, 0x1f, 0xac, 0x09,
-	0x12, 0x0e, 0xca, 0x30, 0x75, 0x86, 0xe1, 0xa7
+static uint8_t key_iv[16] ={
+	0x42,0x42,0x42,0x42,
+	0x42,0x42,0x42,0x42,
+	0x42,0x42,0x42,0x42,
+	0x42,0x42,0x42,0x42,
 };
+uint8_t * key = key_iv;
+static uint8_t* cbc_buffer;
+static uint8_t* out_buffer;
+static uint32_t cap_flags;
 
-static uint8_t key[16] = {
-	0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6, 0xab, 0xf7, 0x15, 0x88,
-	0x09, 0xcf, 0x4f, 0x3c
-};
-
-static uint8_t plaintext[64] = {
-	0x6b, 0xc1, 0xbe, 0xe2, 0x2e, 0x40, 0x9f, 0x96, 0xe9, 0x3d, 0x7e, 0x11,
-	0x73, 0x93, 0x17, 0x2a, 0xae, 0x2d, 0x8a, 0x57, 0x1e, 0x03, 0xac, 0x9c,
-	0x9e, 0xb7, 0x6f, 0xac, 0x45, 0xaf, 0x8e, 0x51, 0x30, 0xc8, 0x1c, 0x46,
-	0xa3, 0x5c, 0xe4, 0x11, 0xe5, 0xfb, 0xc1, 0x19, 0x1a, 0x0a, 0x52, 0xef,
-	0xf6, 0x9f, 0x24, 0x45, 0xdf, 0x4f, 0x9b, 0x17, 0xad, 0x2b, 0x41, 0x7b,
-	0xe6, 0x6c, 0x37, 0x10
-};
-uint32_t cap_flags;
-
+static uint16_t len = 32;
 void main(void)
 {
 	//https://docs.zephyrproject.org/2.3.0/reference/peripherals/uart.html#api-reference
@@ -63,7 +50,6 @@ void main(void)
 	if(!uart_configure(uart_dev, &uart_cfg)){
 		printk("UART-config-error\n");
 	}
-
 
 	
 	pthread_t thread_id[Number_of_threads];
@@ -92,11 +78,13 @@ void init_threads(pthread_t* thread_id)
 void state_machine()
 {
 	// uint8_t uart_in = '\0';
-	unsigned char uart_in;
+	uint8_t i = 0;
+	uint8_t uart_in;
+	uint8_t* data_buffer = "";
 	printk("In State Machine\n");
 	while(1)
 	{
-		switch(status){
+		switch(st_state){
 			case INIT: 
 				// printk("Init State\n");
 				if(!uart_poll_in(uart_dev, &uart_in)){
@@ -105,7 +93,7 @@ void state_machine()
 						case 'D':
 						case 'd':
 							if(processing_busy == false){
-								status = DECRYPT;
+								st_state = DECRYPT;
 							}
 							
 							break;
@@ -113,13 +101,13 @@ void state_machine()
 						case 'k':
 							if(processing_busy == false)
 							{
-								status = KEY;
+								st_state = KEY;
 							}
 							break;
 						case 'I':
 						case 'i':
 							if(processing_busy == false){
-								status = IV;
+								st_state = IV;
 							}
 							break;
 						case 'p':
@@ -142,10 +130,80 @@ void state_machine()
 					break;
 				}
 				break;
+			
+			case DECRYPT:
+				printk("DECRYPT\n");
+				processing_busy = true;
+				st_state = DLEN;
+				operation = OP_DECRYPT; 
+				break;
+			case IV: 
+				st_state = DATA;
+				operation = OP_IV;
+				data_buffer = (uint8_t*)malloc(AES_IV_LEN);
+				len = AES_IV_LEN;
+				break;
+			
+			case KEY: 
+				st_state = DATA;
+				operation = OP_KEY;
+				data_buffer = (uint8_t*)malloc(AES_KEY_LEN);
+				len = AES_KEY_LEN;
+				break;
+
+			case DLEN:
+				st_state = DATA;
+				i = 0;
+				while(1)
+				{
+					if(!uart_poll_in(uart_dev, &uart_in)){ 
+						len = uart_in; 
+						break;
+					}
+				}
+				data_buffer = (uint8_t*)malloc((len + AES_IV_LEN) * sizeof(uint8_t));
+				memcpy(data_buffer, key_iv, AES_IV_LEN);
+				data_buffer += AES_IV_LEN;
+
+			case DATA:
+				st_state = SELECT_OPERATION;
+				i = 0;
+				printk("DATA\n");
+				while(len> i){
+					if(!uart_poll_in(uart_dev, &uart_in)){ 
+						printk("Data: 0x%02X\n", uart_in);
+						data_buffer[i++] = uart_in;
+					}
+				}
+				break;
+
+			case SELECT_OPERATION:
+				switch (operation)
+				{
+				case OP_KEY:
+					printk("OP_IV\n");
+					memcpy(key, data_buffer, AES_KEY_LEN);
+					st_state = INIT; 
+					break;
+				case OP_IV:
+					printk("OP_IV\n");
+					memcpy(key_iv, data_buffer, AES_IV_LEN);
+					st_state = INIT; 
+					break;
+				case OP_DECRYPT:
+					printk("OP_DECRYPT\n");
+					cbc_buffer=data_buffer;
+					put_message_in_crypto_queue("D\n");
+					st_state = INIT; 
+					break;
+				
+				default:
+					break;
+				}
+				break;
 			default:
 				break;
-			case DECRYPT:
-				processing_busy = true;
+
 		}
 	}
 }
@@ -193,154 +251,57 @@ int put_message_in_crypto_queue(unsigned char* str)
 	return 0;
 }
 
-int validate_hw_compatibility(const struct device *dev)
-{
-	uint32_t flags = 0U;
-
-	flags = cipher_query_hwcaps(dev);
-	if ((flags & CAP_RAW_KEY) == 0U) {
-		// LOG_INF("Please provision the key separately "
-		// 	"as the module doesnt support a raw key");
-		return -1;
-	}
-
-	if ((flags & CAP_SYNC_OPS) == 0U) {
-		// LOG_ERR("The app assumes sync semantics. "
-		//   "Please rewrite the app accordingly before proceeding");
-		return -1;
-	}
-
-	if ((flags & CAP_SEPARATE_IO_BUFS) == 0U) {
-		// LOG_ERR("The app assumes distinct IO buffers. "
-		// "Please rewrite the app accordingly before proceeding");
-		return -1;
-	}
-
-	cap_flags = CAP_RAW_KEY | CAP_SYNC_OPS | CAP_SEPARATE_IO_BUFS;
-
-	return 0;
-
-}
 
 
-void cbc_mode(const struct device *dev)
-{
-	uint8_t encrypted[80] = {0};
-	uint8_t decrypted[64] = {0};
+void cbc_mode()
+{	
+	printk("CBC_Mode: \n");
+	printk("Key: %s\nIV: %s\nBuffer: %s\nBuffer 0x%02x\n", key, key_iv, cbc_buffer, cbc_buffer);
+	uint32_t  in_buffer_len = len + AES_IV_LEN; 
+	uint32_t out_buffer_len = len; 
+	out_buffer = malloc(out_buffer_len);
+
+	
 	struct cipher_ctx ini = {
 		.keylen = sizeof(key),
 		.key.bit_stream = key,
 		.flags = cap_flags,
 	};
-	struct cipher_pkt encrypt = {
-		.in_buf = plaintext,
-		.in_len = sizeof(plaintext),
-		.out_buf_max = sizeof(encrypted),
-		.out_buf = encrypted,
-	};
 	struct cipher_pkt decrypt = {
-		.in_buf = encrypt.out_buf,
-		.in_len = sizeof(encrypted),
-		.out_buf = decrypted,
-		.out_buf_max = sizeof(decrypted),
+		.in_buf = cbc_buffer,
+		.in_len = in_buffer_len,
+		.out_buf = out_buffer,
+		.out_buf_max = out_buffer_len,
 	};
-
-	static uint8_t iv[16] = {
-		0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
-		0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f
-	};
-
-	if (cipher_begin_session(dev, &ini, CRYPTO_CIPHER_ALGO_AES,
-				 CRYPTO_CIPHER_MODE_CBC,
-				 CRYPTO_CIPHER_OP_ENCRYPT)) {
-		return;
+	if(cipher_begin_session(crypto_dev, &ini, CRYPTO_CIPHER_ALGO_AES, CRYPTO_CIPHER_MODE_CBC, CRYPTO_CIPHER_OP_DECRYPT)){
+		cipher_free_session(crypto_dev, &ini);
+	} 
+	if (cipher_cbc_op(&ini, &decrypt, cbc_buffer)) {
+		cipher_free_session(crypto_dev, &ini);
 	}
-
-	if (cipher_cbc_op(&ini, &encrypt, iv)) {
-		printk("CBC mode ENCRYPT - Failed\n");
-		goto out;
-	}
-
-	printk("Output length (encryption): %d\n", encrypt.out_len);
-
-	if (memcmp(encrypt.out_buf, cbc_ciphertext, sizeof(cbc_ciphertext))) {
-		printk("CBC mode ENCRYPT - Mismatch between expected and "
-			    "returned cipher text\n");
-		put_message_in_crypto_queue((char*)cbc_ciphertext);
-		// print_buffer_comparison(cbc_ciphertext, encrypt.out_buf,
-		// 			sizeof(cbc_ciphertext));
-		goto out;
-	}
-
-	printk("CBC mode ENCRYPT - Match\n");
-	cipher_free_session(dev, &ini);
-
-	if (cipher_begin_session(dev, &ini, CRYPTO_CIPHER_ALGO_AES,
-				 CRYPTO_CIPHER_MODE_CBC,
-				 CRYPTO_CIPHER_OP_DECRYPT)) {
-		return;
-	}
-
-	/* TinyCrypt keeps IV at the start of encrypted buffer */
-	if (cipher_cbc_op(&ini, &decrypt, encrypted)) {
-		printk("CBC mode DECRYPT - Failed\n");
-		goto out;
-	}
-
-	printk("Output length (decryption): %d,", decrypt.out_len);
-
-	if (memcmp(decrypt.out_buf, plaintext, sizeof(plaintext))) {
-		printk("CBC mode DECRYPT - Mismatch between plaintext and "
-			    "decrypted cipher text\n");
-		put_message_in_crypto_queue((char*)plaintext);
-		// print_buffer_comparison(plaintext, decrypt.out_buf,
-		// 			sizeof(plaintext));
-		goto out;
-	}
-
-out:
-	cipher_free_session(dev, &ini);
 }
 
-// void AES_CBC()
-// {
-// 	//https://docs.zephyrproject.org/latest/reference/crypto/index.html?highlight=cipher_cbc_op#overview
-// 	struct cipher_ctx ctx{
-// 		.key.bit_stream = key,
-// 		.keylen = AES_KEY_LEN,
-// 		.flags = 
-// 	};
-// 	struct cipher_pkt pkt{
 
-// 	}
-// 	if(!cipher_begin_session(crypto_dev, &ctx, CRYPTO_CIPHER_ALGO_AES, CRYPTO_CIPHER_MODE_CBC, CRYPTO_CIPHER_OP_DECRYPT)){
-// 		printk("Couldn't create cipher session\n");
-// 	}
-// 	if(!cipher_cbc_op(&ctx, &pkt, iv)){
-// 		printk("Couldn't do cbc operation\n");
-// 	}
-// }
 //process encryption
 void * process_thread(void * x) 
 {
-	int i=0;
-	uint32_t len; 
-
 	unsigned char* message;
 	while(1)
 	{
 		// printk("uart_out_thread_alive\n");
 		if(!k_msgq_get(&crypto_queue, &message, K_NO_WAIT)) {
-			// tx = message->message;
-			// len = message->len;
-			len = strlen(message);
-			printk("Message in queue: %s, leng: %i\n", message, len);
-
-			while(i < len)
+			
+			switch (message[0])
 			{
-				uart_poll_out(uart_dev, message[i++]);
+			case 'D':
+				printk("Process_thread: Decrypting\n");
+				processing_busy = true; 
+				cbc_mode();
+				break;
+			
+			default:
+				break;
 			}
-			i = 0;
 		}
 	}
 	return x;

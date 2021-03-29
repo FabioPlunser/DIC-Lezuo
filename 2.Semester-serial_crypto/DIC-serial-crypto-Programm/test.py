@@ -79,6 +79,7 @@ class MyTests(unittest.TestCase):
             data = b'D' + bytes([len(bc)]) + binascii.unhexlify(cyphertext) + b'X'
 
             for d in data:
+                print(f"Data in Bytes: {bytes([d])} Data: {d}")
                 ser.write(bytes([d]))
                 time.sleep(0.1)
 
@@ -96,6 +97,7 @@ class MyTests(unittest.TestCase):
             data = b'D' + bytes([len(bc)]) + binascii.unhexlify(cyphertext) + b'X'
 
             for d in data:
+                print(f"Data in Bytes: {bytes([d])} Data: {d}")
                 ser.write(bytes([d]))
                 time.sleep(0.1)
 
@@ -116,7 +118,7 @@ class MyTests(unittest.TestCase):
                 time.sleep(0.1)
 
     
-            # deciphers to "Schoene Crypto Welt" with IV=BBBBBBBBBBBBBBBB and key=BBBBBBBBBBBBBBBB aes128-cbc
+            # deciphers to "Schoene Crypto Welt" with IV=AAAAAAAAAAAAAAAA and key=AAAAAAAAAAAAAAAA aes128-cbc
             cyphertext = "558F856896873142B16DC8F2EA8F334EDA7E8F7137877EC250AD733A7403CFC0"
             bc = binascii.unhexlify(cyphertext) 
             data = b'D' + bytes([len(bc)]) + binascii.unhexlify(cyphertext) + b'X'
