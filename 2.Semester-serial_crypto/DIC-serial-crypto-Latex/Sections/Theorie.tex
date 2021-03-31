@@ -1,0 +1,76 @@
+\section{Theorie und Vorwissen}
+\subsection{Zephyr}
+    Zephyr ist ein Open-Source-Echtzeitbetriebssystem welches von der Linux Foundation.\footnote{Quelle: \url{https://de.wikipedia.org/wiki/Zephyr_(Betriebssystem)}}
+    Ein Echtzeitbetriebssystem, real-time operating system \textbf{RTOS} ist ein Betriebssystem, das Echtzeit-Anforderungen erfüllen kann. 
+    Das bedeutet, dass Anfragen eines Anwendungsprogramms innerhalb einer Voraus bestimmbaren Zeit gesichert verarbeitet werden.\footnote{Quelle: \url{https://de.wikipedia.org/wiki/Echtzeitbetriebssystem}}
+    \\
+    Zephyr wurde mit dem \href{https://docs.zephyrproject.org/latest/getting_started/index.html}{Getting-Started-GUID} Linux Subsystem von Windows installiert. 
+    Um ein Zephyr Projekt zu kompilieren wird Zephyr eigenes \textbf{West}\footnote{\url{https://docs.zephyrproject.org/2.4.0/guides/west/index.html}} verwendet.\\
+    \textbf{West} ist ein Kompilierungs-Tool von Zephyr. Es verwendet Ninja und CMake um das Projekt zu kompilieren. 
+    West wird folgendermaßen verwendet, um ein Projekt zu kompilieren: 
+    \begin{lstlisting}[style=StyleC, captionpos=b, caption=West Beispiel, label=West Beispiel]
+west build -p auto -b nativ_posix_64 
+    \end{lstlisting}
+
+    \subsubsection{KConfig}
+    \textbf{Kernel Configuration File}\footnote{\url{https://docs.zephyrproject.org/latest/application/index.html?\#application-kconfig}}ist die \textcolor{red}{prj.conf} Datei in einem 
+    Zephyr Projekt. In diesem werden bestimmte Konfigurationen, Funktionen und \anfuehrung{Geräte}, wie z.b. \textit{CONFIG\_SERIAL=y} aktiviert. 
+
+
+\newpage
+    \subsubsection{Device Tree}
+    Der Device Tree\footnote{\url{https://docs.zephyrproject.org/latest/guides/dts/intro.html}\\\url{https://docs.zephyrproject.org/latest/reference/devicetree/index.html\#devicetree}} ist 
+    in einem Zephyr Projekt eine Datei mit der Endung \textbf{.dts} dort stehen alle für das ausgewählte Board verfügbare Geräte drinnen.
+    Im Fall des nativ\_posix\_64 sieht dieses folgendermaßen aus. 
+    \begin{lstlisting}[style=StyleC, captionpos=b, caption=West Beispiel, label=West Beispiel]
+/dts-v1/;
+
+/ {
+    #address-cells = < 0x1 >;
+    #size-cells = < 0x1 >;
+    model = "Native POSIX Board";
+    compatible = "zephyr,posix";
+    chosen {
+        zephyr,console = &uart0;
+        zephyr,shell-uart = &uart0;
+        zephyr,uart-mcumgr = &uart0;
+        zephyr,flash = &flash0;
+        zephyr,entropy = &rng;
+        zephyr,flash-controller = &flashcontroller0;
+        zephyr,ec-host-interface = &hcp;
+    };
+    aliases {
+        eeprom-0 = &eeprom0;
+        i2c-0 = &i2c0;
+        spi-0 = &spi0;
+        led0 = &led0;
+    };
+    leds {
+        compatible = "gpio-leds";
+        led0: led_0 {
+            gpios = < &gpio0 0x0 0x0 >;
+            label = "Green LED";
+        };
+    };
+
+    ...
+
+    };
+    uart0: uart {
+        status = "okay";
+        compatible = "zephyr,native-posix-uart";
+        label = "UART_0";
+        current-speed = < 0x0 >;
+    };
+    
+    ...
+
+};    
+    \end{lstlisting}
+
+
+\newpage
+    \subsubsection{Tinycrypt}
+\subsection{Linux Pseudo-Terminal}
+\subsection{Threads}
+\subsection{Message-Queue}

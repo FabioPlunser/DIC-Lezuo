@@ -23,18 +23,25 @@
 
 #define Number_of_threads 3
 #define UART_NAME "UART_0"
+#define CRYPTO_DRV_NAME CONFIG_CRYPTO_TINYCRYPT_SHIM_DRV_NAME
 #define q_max_msgs 20
 #define q_align 1
 #define AES_KEY_LEN 16
 #define AES_IV_LEN 16
+struct uart_message{
+    unsigned char* message; 
+    uint32_t len; 
+};
+
 void init_threads(pthread_t* thread_id);
 void* uart_in_thread(void* x);
 void* uart_out_thread(void* x);
 void* process_thread(void* x);
-int put_message_in_uart_queue(unsigned char* str);
+int put_message_in_uart_queue(unsigned char* str, uint32_t len);
 int put_message_in_crypto_queue(unsigned char* str);
-int validate_hw_compatibility(const struct device *dev);
-void cbc_mode();
+int validate_hw_compatibility();
+int cbc_mode();
+
 
 enum state{ 
     INIT, 

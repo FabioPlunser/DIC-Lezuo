@@ -59,21 +59,24 @@
 \definecolor{mGray}{rgb}{0.5,0.5,0.5}
 \definecolor{mPurple}{rgb}{0.58,0,0.82}
 \definecolor{backgroundColour}{rgb}{255,255,255}
-\lstdefinestyle{CStyle}
+
+\lstdefinestyle{StyleC}
 {
-    backgroundcolor=\color{backgroundColour},   
-    frame=single,
+    frameround=tttt,
+    numbers=left,
+    backgroundcolor=\color{backgroundColour},
     belowcaptionskip=1\baselineskip,
     breaklines=true,
     xleftmargin=\parindent,
     language=C,
+    frame = single,
     showstringspaces=false,
     basicstyle=\footnotesize\ttfamily,
     keywordstyle=\bfseries\color{magenta},
     commentstyle=\color{mGreen},
     identifierstyle=\color{blue},
     stringstyle=\color{orange},
-}   
+} 
 
 %End------------------------------------------------------------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------------------------------------------------------------
@@ -152,7 +155,7 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 
-
+\newcommand{\anfuehrung}[1]{\glqq #1\grqq{}}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -214,7 +217,6 @@
 %---------------------------------------------------------------------------------------------------------------------------------------------
 %Main
 \input{Sections/Aufgabenstellung.tex}
-\input{Sections/Zephyr.tex}
 \input{Sections/Theorie.tex}
 \input{Sections/Programm.tex}
 %-------------------------------------------------------------------------------------------------------
