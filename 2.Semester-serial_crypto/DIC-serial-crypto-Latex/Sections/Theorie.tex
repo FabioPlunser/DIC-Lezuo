@@ -71,6 +71,23 @@ west build -p auto -b nativ_posix_64
 
 \newpage
     \subsubsection{Tinycrypt}
-\subsection{Linux Pseudo-Terminal}
+    Tinycrypt ist eine kleine Kryptography Bibliothek, von Intel\footnote{\url{https://github.com/intel/tinycrypt}}, die in Assenbler geschreiben und in Zephyr implementiert wird.\footnote{\url{https://docs.zephyrproject.org/2.3.0/guides/crypto/tinycrypt.html?highlight=tinycrypt}}
+
+     
+\subsection{Linux Pseudoterminal}
+Ein Pseudoterminal ist ein Dienst der eine bidirektionale Pipe, aufbaut. Sie werden verwendet um ein physisches Terminal zu emulieren. 
+Im Fall von Zephyr mit dem nativ\_posx Board wird ein Pseudoterminal verwendet um mit dem Baord zu kommunizieren. Der Pfad dieses Terminals ist /dev/pts/.
 \subsection{Threads}
+Ein Thread ist eine sequentielle Reihe von Befehlen. Mehrere Threads können unabhängig voneinander gleichzeitig laufen. Somit können mehrere Aufgaben gleichzeitig erledigt werden. 
+
 \subsection{Message-Queue}
+Eine Message-Queue ist ein besonderer Buffer, ein FIFO-Buffer (First-In-First-Out-Buffer). Das bedeutet, es werden Nachrichten in einer Reihe in den Buffer geschrieben und es kann nur die
+erste Nachricht in der Reihe herausgenommen werden, dabei wird diese nachricht im Buffer gelöscht und die nächste Nachricht rückt nach. 
+Solche Message-Queues werden verwendet, um zwischen Threads die Daten korrekt auszutauschen. Da eine Nachricht beim auslesen gelöscht wird, können nicht mehrere Threads gleichzeitig auf 
+die Nachricht zugreifen. 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{Message-Queue.pdf}
+    \caption{Message-Queue-Darstellung}
+    \label{fig:Message-Queue-Darstellung}
+\end{figure}

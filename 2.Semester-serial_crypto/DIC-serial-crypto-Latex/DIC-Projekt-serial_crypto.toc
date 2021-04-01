@@ -6,7 +6,15 @@
 \contentsline {subsubsection}{\numberline {2.1.1}KConfig}{2}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Device Tree}{3}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}Tinycrypt}{4}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Linux Pseudo-Terminal}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Linux Pseudoterminal}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Threads}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Message-Queue}{4}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Programm Umsetzung}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Blockschaltbild}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Projekt Konfiguration}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Initialisierung}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}UART-In-Thread}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}UART-Out-Thread}{5}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Processing Thread}{5}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Entschlüsselung}{5}{subsubsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.7}Test-Ausführung}{5}{subsection.3.7}%
