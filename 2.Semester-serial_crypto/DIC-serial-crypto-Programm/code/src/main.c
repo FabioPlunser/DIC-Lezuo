@@ -1,7 +1,13 @@
-/*
-	Author: Fabio Plunser
+// Author: FabioPlunser //
+// Date: 10.3.2021 - 7.03.2021 //
+// GIT-Repo: https://github.com/FabioPlunser/DIC-Lezuo
+// Specific Git-location: https://github.com/FabioPlunser/DIC-Lezuo/tree/master/2.Semester-serial_crypto/DIC-serial-crypto-Programm //
+// Compiled with make, in WSL using Ubuntu 20.0.4, as you can see in my Repo //
 
-*/
+// DIC Project Crypto Processor //
+
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
 #include "main.h"
 const struct device * uart_dev;
 const struct device * crypto_dev;
@@ -61,6 +67,7 @@ void main(void)
 	init_threads(thread_id);
 	while(1) {
 		printk("Main-Thread is alive\n");
+		put_message_in_uart_queue("Main-Thread is alive\n", strlen("Main-Thread is alive\n"));
         sleep(5);
     }
 	
@@ -354,8 +361,6 @@ void * process_thread(void * x)
 				{
 					format_plaintext_for_comparison(out_buffer);
 				}
-				
-				
 				processing_busy = false;
 				break;
 			case 'P':
