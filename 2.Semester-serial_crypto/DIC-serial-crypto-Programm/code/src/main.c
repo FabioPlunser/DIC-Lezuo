@@ -9,13 +9,19 @@
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 #include "main.h"
+//create uart device
 const struct device * uart_dev;
+//create crypto device
 const struct device * crypto_dev;
+//set standard enumeration state for state machine
 enum state st_state = INIT;
+//get enumeration
 enum op operation;
+//set busy flag false as standard
 bool processing_busy = false;  
 
 //https://docs.zephyrproject.org/2.3.0/reference/kernel/data_passing/message_queues.html?highlight=queue
+//define two queues
 K_MSGQ_DEFINE(uart_queue, sizeof(struct uart_message *), q_max_msgs, q_align);
 K_MSGQ_DEFINE(crypto_queue, sizeof(char* ), q_max_msgs, q_align);
 
@@ -23,14 +29,16 @@ K_MSGQ_DEFINE(crypto_queue, sizeof(char* ), q_max_msgs, q_align);
 
 //https://docs.zephyrproject.org/2.3.0/reference/peripherals/uart.html#_CPPv411uart_config
 
-//Random ciphertext key and plaintext from cbc sample
+//set default ciphertext BBBBBBBBBBBBBBBB
 static uint8_t iv[AES_IV_LEN] ={
 	0x42,0x42,0x42,0x42,
 	0x42,0x42,0x42,0x42,
 	0x42,0x42,0x42,0x42,
 	0x42,0x42,0x42,0x42,
 };
+//set default key, with care so that iv and key are not overwriting each other
 uint8_t* key = iv;
+
 static uint8_t* cbc_buffer;
 static uint8_t* out_buffer;
 static uint32_t cap_flags;
@@ -38,12 +46,14 @@ static uint32_t cap_flags;
 static uint16_t len;
 void main(void)
 {
+	
 	//https://docs.zephyrproject.org/2.3.0/reference/peripherals/uart.html#api-reference
+	//bind UART
 	uart_dev = device_get_binding(UART_NAME);
 	if(!uart_dev){
 		printk("UART-binding-error\n");
 	}
-	
+	//creat UART configuration
 	const struct uart_config uart_cfg = {
 		.baudrate = 115200,
 		.parity = UART_CFG_PARITY_NONE,
@@ -51,29 +61,34 @@ void main(void)
 		.data_bits = UART_CFG_DATA_BITS_8,
 		.flow_ctrl = UART_CFG_FLOW_CTRL_NONE
 	};
-
+	//set UART configuration
 	if(!uart_configure(uart_dev, &uart_cfg)){
 		printk("UART-config-error\n");
 	}
 
+	//bind crpyto
 	crypto_dev = device_get_binding(CRYPTO_DRV_NAME);
 	if (!crypto_dev) {
         printk("Crypto-binding-error\n");
         return;
     }
-
+	//validate hardware for crypto device
 	validate_hw_compatibility();
+
+	//create thread array and initalize thread
 	pthread_t thread_id[Number_of_threads];
 	init_threads(thread_id);
+
+	//send alive message
 	while(1) {
 		printk("Main-Thread is alive\n");
-		put_message_in_uart_queue("Main-Thread is alive\n", strlen("Main-Thread is alive\n"));
         sleep(5);
     }
 	
 }
 void init_threads(pthread_t* thread_id)
-{
+{	
+	//init threads
 	int i, thread_ok;
 	void*(*threads[])(void*) = {uart_in_thread, uart_out_thread, process_thread};
 	for(i=0; i<Number_of_threads; i++)

@@ -13,8 +13,12 @@
 \contentsline {subsection}{\numberline {3.1}Blockschaltbild}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Projekt Konfiguration}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Initialisierung}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}UART-In-Thread}{6}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}UART-Out-Thread}{6}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Processing Thread}{6}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Entschlüsselung}{6}{subsubsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.7}Test-Ausführung}{6}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.3.1}Message-Queue}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}UART\_0}{7}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Verschlüsselung}{8}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Threads}{9}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}UART-IN-Thread}{9}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}UART-Out-Thread}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Processing Thread}{12}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Entschlüsselung}{13}{subsubsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.7}Test-Ausführung}{14}{subsection.3.7}%

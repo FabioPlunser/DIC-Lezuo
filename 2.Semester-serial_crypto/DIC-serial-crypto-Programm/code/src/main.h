@@ -14,7 +14,6 @@
 #include <crypto/cipher_structs.h>
 #include <tinycrypt/cbc_mode.h>
 #include <tinycrypt/constants.h>
-#include <logging/log.h>
 #include <pthread.h>
 #include <posix/mqueue.h>
 #include <posix/posix_types.h>

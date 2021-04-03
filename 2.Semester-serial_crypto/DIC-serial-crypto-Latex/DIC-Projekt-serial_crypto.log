@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  2 APR 2021 20:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  3 APR 2021 11:25
 entering extended mode
 **c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/DIC-Projekt-serial_crypto.tex
 (c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/DIC-Projekt-serial_crypto.tex
@@ -685,7 +685,7 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 \c@subsubsubsection=\count352
 \c@subsubsubsubsection=\count353
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 159.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 160.
  (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -696,30 +696,39 @@ File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `West Beispiel' multiply defined.
 
+
+LaTeX Warning: Label `UART-Initialisierung' multiply defined.
+
+
+LaTeX Warning: Label `UART-Initialisierung' multiply defined.
+
+
+LaTeX Warning: Label `UART-Initialisierung' multiply defined.
+
 )
 \openout1 = `DIC-Projekt-serial_crypto.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 160.
+LaTeX Font Info:    ... okay on input line 160.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 159.
+(lastpage)             ! on input line 160.
  (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count355
@@ -751,7 +760,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-Package hyperref Info: Link coloring OFF on input line 159.
+Package hyperref Info: Link coloring OFF on input line 160.
  (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -761,9 +770,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count361
 )
-LaTeX Info: Redefining \ref on input line 159.
-LaTeX Info: Redefining \pageref on input line 159.
-LaTeX Info: Redefining \nameref on input line 159.
+LaTeX Info: Redefining \ref on input line 160.
+LaTeX Info: Redefining \pageref on input line 160.
+LaTeX Info: Redefining \nameref on input line 160.
  (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.out) (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.out)
 \@outlinefile=\write7
 \openout7 = `DIC-Projekt-serial_crypto.out'.
@@ -804,42 +813,42 @@ LaTeX Info: Redefining \nameref on input line 159.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count362
-<Bilder//htl-logo.jpg, id=82, 1350.04375pt x 269.005pt>
+<Bilder//htl-logo.jpg, id=98, 1350.04375pt x 269.005pt>
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 164.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 165.
 (pdftex.def)             Requested size: 500.484pt x 99.7232pt.
 
-Overfull \hbox (72.30328pt too wide) in paragraph at lines 164--164
+Overfull \hbox (72.30328pt too wide) in paragraph at lines 165--165
  []\OT1/lmr/m/n/20.74 noindent[] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/lmr/bx/sc' undefined
-(Font)              using `OT1/lmr/bx/n' instead on input line 164.
+(Font)              using `OT1/lmr/bx/n' instead on input line 165.
 
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 164.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 165.
 (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 164.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 165.
  (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 164.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 165.
  (C:\Users\fplun\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 164.
+(Font)              <14.4> on input line 165.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 164.
+(Font)              <10> on input line 165.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 164.
-<Bilder//zephyr-logo.png, id=83, 440.64626pt x 227.85126pt>
+(Font)              <7> on input line 165.
+<Bilder//zephyr-logo.png, id=99, 440.64626pt x 227.85126pt>
 File: Bilder//zephyr-logo.png Graphic file (type png)
 <use Bilder//zephyr-logo.png>
-Package pdftex.def Info: Bilder//zephyr-logo.png  used on input line 166.
+Package pdftex.def Info: Bilder//zephyr-logo.png  used on input line 167.
 (pdftex.def)             Requested size: 440.64517pt x 227.8507pt.
  [1
 
@@ -858,20 +867,36 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@lof=\write9
 \openout9 = `DIC-Projekt-serial_crypto.lof'.
 
- (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.lol)
+ (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.lolpdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 ...}{\numberline {3}prj.conf}{6}{lstlisting.3}
+                                                  % [1])
 \tf@lol=\write10
 \openout10 = `DIC-Projekt-serial_crypto.lol'.
+
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 208.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.207 \pagenumbering
-                    {arabic} [1] (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\Sections/Aufgabenstellung.tex
+l.208 \pagenumbering
+                    {arabic} [2] (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\Sections/Aufgabenstellung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--8
 
  []
 
-<Bilder//Statemachine.png, id=127, 1806.75pt x 543.53062pt>
+<Bilder//Statemachine.png, id=186, 1806.75pt x 543.53062pt>
 File: Bilder//Statemachine.png Graphic file (type png)
 <use Bilder//Statemachine.png>
 Package pdftex.def Info: Bilder//Statemachine.png  used on input line 15.
@@ -937,7 +962,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [3]
 
 pdfTeX warning: pdflatex (file c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Message-Queue.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder//Message-Queue.pdf, id=217, 434.58359pt x 89.3739pt>
+<Bilder//Message-Queue.pdf, id=275, 434.58359pt x 89.3739pt>
 File: Bilder//Message-Queue.pdf Graphic file (type pdf)
 <use Bilder//Message-Queue.pdf>
 Package pdftex.def Info: Bilder//Message-Queue.pdf  used on input line 90.
@@ -958,16 +983,163 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4 <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Message-Queue.pdf>]
 
 pdfTeX warning: pdflatex (file c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Blockschaltbild.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder//Blockschaltbild.pdf, id=235, 427.5975pt x 211.7511pt>
+<Bilder//Blockschaltbild.pdf, id=294, 427.5975pt x 211.7511pt>
 File: Bilder//Blockschaltbild.pdf Graphic file (type pdf)
 <use Bilder//Blockschaltbild.pdf>
-Package pdftex.def Info: Bilder//Blockschaltbild.pdf  used on input line 19.
+Package pdftex.def Info: Bilder//Blockschaltbild.pdf  used on input line 29.
 (pdftex.def)             Requested size: 500.484pt x 247.8447pt.
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 37.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[5]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 61.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[6 <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Blockschaltbild.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[][][][]$\OT1/lmtt/m/n/10 https : / / docs . zephyrproject . org / 2 . 3 . 0 / reference / kernel / data _ passing / message _ queues . html ?
+ []
+
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 96.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[7]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 141.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[8]
+Overfull \hbox (2.49277pt too wide) in paragraph at lines 166--169
+\OT1/lmr/m/n/12 Im UART-IN-Thread ist die State-ma-chi-ne im-ple-men-tiert. So-mit steu-ert die-ser Thread al-le Vorg[]ange
+ []
+
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 179.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[9]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 230.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[10]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 279.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[11]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 322.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[12]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 366.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[13]
+<Bilder//Test00-01.png, id=603, 1111.15125pt x 491.58656pt>
+File: Bilder//Test00-01.png Graphic file (type png)
+<use Bilder//Test00-01.png>
+Package pdftex.def Info: Bilder//Test00-01.png  used on input line 370.
+(pdftex.def)             Requested size: 500.484pt x 221.42194pt.
+<Bilder//Test02.png, id=604, 1105.88156pt x 295.1025pt>
+File: Bilder//Test02.png Graphic file (type png)
+<use Bilder//Test02.png>
+Package pdftex.def Info: Bilder//Test02.png  used on input line 376.
+(pdftex.def)             Requested size: 500.484pt x 133.55138pt.
+<Bilder//Test03.png, id=605, 1001.99344pt x 207.02344pt>
+File: Bilder//Test03.png Graphic file (type png)
+<use Bilder//Test03.png>
+Package pdftex.def Info: Bilder//Test03.png  used on input line 382.
+(pdftex.def)             Requested size: 500.484pt x 103.40721pt.
+<Bilder//Test04.png, id=606, 875.52094pt x 749.80125pt>
+File: Bilder//Test04.png Graphic file (type png)
+<use Bilder//Test04.png>
+Package pdftex.def Info: Bilder//Test04.png  used on input line 388.
+(pdftex.def)             Requested size: 500.484pt x 428.61534pt.
+<Bilder//Test05.png, id=607, 867.99281pt x 747.54282pt>
+File: Bilder//Test05.png Graphic file (type png)
+<use Bilder//Test05.png>
+Package pdftex.def Info: Bilder//Test05.png  used on input line 394.
+(pdftex.def)             Requested size: 500.484pt x 431.04288pt.
 ) 
 AED: lastpage setting LastPage
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 224.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 225.
 (pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -976,10 +1148,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
 
-[5 <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Blockschaltbild.pdf>]
+[14 <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Test00-01.png> <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Test02.png> <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Test03.png>]
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 224.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 225.
 (pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
 
 
@@ -989,7 +1161,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
 
-[6] (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.aux)
+[15 <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Test04.png>]
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 225.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 28.55943pt, for example:
+(fancyhdr)                \setlength{\headheight}{28.55943pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-16.55943pt}.
+
+[16 <c:/Users/fplun/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Test05.png>] (c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -997,20 +1182,20 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `DIC-Projekt-serial_crypto.out' has not changed.
-(rerunfilecheck)             Checksum: 70CE8E0C441AC5CCFEBE34EA5A2A20B8;2648.
+(rerunfilecheck)             Checksum: EB01DA7376D29527970A6CCCD5B00D4D;3131.
  ) 
 Here is how much of TeX's memory you used:
- 38063 strings out of 479334
- 869803 string characters out of 2857084
- 1660036 words of memory out of 3000000
- 54762 multiletter control sequences out of 15000+200000
+ 38667 strings out of 479334
+ 878918 string characters out of 2857084
+ 1704665 words of memory out of 3000000
+ 55084 multiletter control sequences out of 15000+200000
  455345 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,16n,133p,1213b,1346s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 102i,16n,133p,1213b,1348s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/fplun/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.pdf (8 pages, 1258350 bytes).
+Output written on c:/Users\fplun\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.pdf (19 pages, 1678638 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
- 190 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 736 PDF objects out of 1000 (max. 8388607)
+ 361 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 
