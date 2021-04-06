@@ -1,3 +1,5 @@
+#Makefile wurde vom David Rieser kopiert. 
+
 BOARD_VAR=native_posix_64
 
 
