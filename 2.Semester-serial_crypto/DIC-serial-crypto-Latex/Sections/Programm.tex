@@ -37,13 +37,13 @@ Das Programm wurde wie angegeben in 4 Threads eingeteilt.
 \newpage
 \subsection{Projekt Konfiguration}
 Sodass, das nativ\_posix Board die benötigten Geräte verwenden kann müssen dieser in der \textbf{prj.conf} Datei aktivieren werden. 
-\begin{lstlisting}[style=StyleC, captionpos=b, caption=prj.conf, label=pjr.conf]
+\begin{lstlisting}[style=StylePython, captionpos=b, caption=prj.conf, label=pjr.conf]
 #Configure Serial-Connection
 CONFIG_SERIAL=y
 CONFIG_UART_NATIVE_POSIX=y
 CONFIG_NATIVE_UART_0_ON_OWN_PTY=y
 
-#Configure Crypto
+#Crypto
 CONFIG_TINYCRYPT=y
 CONFIG_TINYCRYPT_AES=y
 CONFIG_TINYCRYPT_AES_CBC=y

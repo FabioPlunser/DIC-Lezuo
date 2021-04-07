@@ -60,7 +60,7 @@ void main(void)
 		.stop_bits = UART_CFG_STOP_BITS_1,
 		.data_bits = UART_CFG_DATA_BITS_8,
 		.flow_ctrl = UART_CFG_FLOW_CTRL_NONE
-	};
+	};	
 	//set UART configuration
 	if(!uart_configure(uart_dev, &uart_cfg)){
 		printk("UART-config-error\n");
@@ -82,7 +82,7 @@ void main(void)
 	//send alive message
 	while(1) {
 		printk("Main-Thread is alive\n");
-        sleep(5);
+        sleep(5000);
     }
 	
 }

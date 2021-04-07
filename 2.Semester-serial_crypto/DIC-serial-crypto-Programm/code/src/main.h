@@ -1,4 +1,4 @@
-#include <unistd.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -17,8 +17,8 @@
 #include <pthread.h>
 #include <posix/mqueue.h>
 #include <posix/posix_types.h>
-#include <time.h>
-
+#include <posix/unistd.h>
+#include <posix/time.h>
 
 #define Number_of_threads 3
 #define UART_NAME "UART_0"
