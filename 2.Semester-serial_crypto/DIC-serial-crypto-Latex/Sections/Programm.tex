@@ -26,7 +26,7 @@ Das Programm wurde wie angegeben in 4 Threads eingeteilt.
 \subsection{Blockschaltbild}
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=\linewidth]{Blockschaltbild.pdf}
+    \includegraphics[width=0.9\linewidth]{Blockschaltbild.pdf}
     \caption{Blockschaltbild}
     \label{fig:Blockschaltbild}
 \end{figure}
@@ -282,40 +282,42 @@ void* uart_out_thread(void * x)
     \begin{lstlisting}[style=StyleC, captionpos=b, caption=Processing-Thread, label=Processing-Thread]
 void * process_thread(void * x) 
 {
-    unsigned char* message;
-    while(1)
-    {
-        if(!k_msgq_get(&crypto_queue, &message, K_NO_WAIT)) {
-            
-            switch (message[0])
-            {
-            case 'D':
-                processing_busy = true; 
-                if(cbc_mode())
-                {
-                    format_plaintext_for_comparison(out_buffer);
-                }
-                processing_busy = false;
-                break;
-            case 'P':
-                processing_busy = true;
-                put_message_in_uart_queue("PROCESSING AVAILABLE\n", strlen("PROCESSING AVAILABLE\n"));
-                processing_busy = false;
-                break; 
-            case 'W':
-                processing_busy = true; 
-                sleep(10);
-                processing_busy = false; 
-                break; 
-            
-            
-            default:
-                break;
-            }
-        }
-    }
-    return x;
-}        
+	unsigned char* message;
+	while(1)
+	{
+		if(!k_msgq_get(&crypto_queue, &message, K_NO_WAIT)) {
+			
+			switch (message[0])
+			{
+			case 'D':
+				printk("Process_thread: Decrypting\n");
+				printk("Ciphertext: %02X\n", cbc_buffer);
+				processing_busy = true; 
+				if(cbc_mode())
+				{
+					format_plaintext_for_comparison(out_buffer);
+				}
+				processing_busy = false;
+				break;
+			case 'P':
+				if(processing_busy == false){
+					put_message_in_uart_queue("PROCESSING AVAILABLE\n", strlen("PROCESSING AVAILABLE\n"));
+				}
+				break; 
+			case 'W':
+				processing_busy = true; 
+				sleep(10);
+				processing_busy = false; 
+				break; 
+			
+			
+			default:
+				break;
+			}
+		}
+	}
+	return x;
+}
     \end{lstlisting}
 
 

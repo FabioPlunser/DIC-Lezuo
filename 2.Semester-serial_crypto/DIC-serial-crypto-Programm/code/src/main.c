@@ -113,7 +113,7 @@ void state_machine()
 			case INIT: 
 				// printk("Init State\n");
 				if(!uart_poll_in(uart_dev, &uart_in)){
-					printk("State Machine UART_IN: %c\n", uart_in);
+					printk("\033[1m\033[32mState Machine UART_IN: %c\033[0m\n", uart_in);
 					switch(uart_in){
 						case 'w':
 						case 'W':
@@ -148,7 +148,6 @@ void state_machine()
 							{
 								sleep(0.1); //weils dann geht
 								put_message_in_uart_queue("BUSY\n", strlen("BUSY\n"));
-							
 							}
 							break;
 						default:
@@ -163,7 +162,6 @@ void state_machine()
 			
 			case DECRYPT:
 				printk("DECRYPT\n");
-				processing_busy = true;
 				st_state = DLEN;
 				operation = OP_DECRYPT; 
 				break;
@@ -200,7 +198,7 @@ void state_machine()
 				printk("DATA\n");
 				while(len> i){
 					if(!uart_poll_in(uart_dev, &uart_in)){ 
-						printk("Data: 0x%02X\n", uart_in);
+						printk("\033[0;31m Data: 0x%02X\033[0m\n", uart_in);
 						data_buffer[i++] = uart_in;
 					}
 				}
@@ -210,18 +208,15 @@ void state_machine()
 				switch (operation)
 				{
 				case OP_KEY:
-					printk("OP_IV\n");
 					memcpy(key, data_buffer, AES_KEY_LEN);
 					st_state = INIT; 
 					break;
 				case OP_IV:
-					printk("OP_IV\n");
 					memcpy(iv, data_buffer, AES_IV_LEN);
 					st_state = INIT; 
 					break;
 				case OP_DECRYPT:
 					data_buffer -= AES_IV_LEN;
-					printk("OP_DECRYPT\n");
 					cbc_buffer=data_buffer;
 					put_message_in_crypto_queue("D\n");
 					st_state = INIT; 
@@ -379,9 +374,9 @@ void * process_thread(void * x)
 				processing_busy = false;
 				break;
 			case 'P':
-				processing_busy = true;
-				put_message_in_uart_queue("PROCESSING AVAILABLE\n", strlen("PROCESSING AVAILABLE\n"));
-				processing_busy = false;
+				if(processing_busy == false){
+					put_message_in_uart_queue("PROCESSING AVAILABLE\n", strlen("PROCESSING AVAILABLE\n"));
+				}
 				break; 
 			case 'W':
 				processing_busy = true; 

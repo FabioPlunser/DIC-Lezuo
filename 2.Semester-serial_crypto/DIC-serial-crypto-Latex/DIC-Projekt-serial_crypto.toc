@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {3.1}Blockschaltbild}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Projekt Konfiguration}{6}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Initialisierung}{6}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Message-Queue}{7}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Message-Queue}{6}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}UART\_0}{7}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Verschlüsselung}{8}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Threads}{9}{subsubsection.3.3.4}%
