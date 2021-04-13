@@ -71,15 +71,26 @@ west build -p auto -b nativ_posix_64
 
 \newpage
     \subsubsection{Tinycrypt}
-    Tinycrypt ist eine kleine Kryptography Bibliothek, von Intel\footnote{\url{https://github.com/intel/tinycrypt}}, die in Assenbler geschreiben und in Zephyr implementiert wird.\footnote{\url{https://docs.zephyrproject.org/2.3.0/guides/crypto/tinycrypt.html?highlight=tinycrypt}}
+    Die TinyCrypt-Bibliothek bietet eine Implementierung für eingeschränkte Geräte von minimalen Standard-Kryptographie-Grundelementen.
+    Di Bibliothek ist von Intel\footnote{\url{https://github.com/intel/tinycrypt}} und wurde in zephyr mit der implementiert.\footnote{\url{https://docs.zephyrproject.org/2.3.0/guides/crypto/tinycrypt.html?highlight=tinycrypt}} 
+    Innerhalb von Zephyr können die eignenen Crypto API Befehle oder die direkten TinyCrypt Befehle verwendet werden. 
 
      
 \subsection{Linux Pseudoterminal}
 Ein Pseudoterminal ist ein Dienst der eine bidirektionale Pipe, aufbaut. Sie werden verwendet um ein physisches Terminal zu emulieren. 
 Im Fall von Zephyr mit dem nativ\_posx Board wird ein Pseudoterminal verwendet um mit dem Baord zu kommunizieren. Der Pfad dieses Terminals ist /dev/pts/.
 \subsection{Threads}
-Ein Thread ist eine sequentielle Reihe von Befehlen. Mehrere Threads können unabhängig voneinander gleichzeitig laufen. Somit können mehrere Aufgaben gleichzeitig erledigt werden. 
+Innerhalb eines Betriebssystems werden Applikationen und Abläufe als Prozesse realisiert. Prozesse werden vom Schedular verwaltet. Um nun die Abarbeitung dieser Prozesse zu 
+beschleunigen, besteht ein ein Prozess aus mehreren parallel laufenden Threads. Diese Threads beinhalten einen Teil des Prozesses, dadurch können große Probleme bestehen. 
+Es muss sichergestellt werden, dass Threads nie auf die gleichen Variablen/Ressourcen zugreifen, da ansonsten Race-Conditions entstehen. 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.65\linewidth]{Process-Threads.png}
+    \caption{Process-Threads}
+    \label{caption:Process-Threads}
+\end{figure}
 
+\newpage
 \subsection{Message-Queue}
 Eine Message-Queue ist ein besonderer Buffer, ein FIFO-Buffer (First-In-First-Out-Buffer). Das bedeutet, es werden Nachrichten in einer Reihe in den Buffer geschrieben und es kann nur die
 erste Nachricht in der Reihe herausgenommen werden, dabei wird diese nachricht im Buffer gelöscht und die nächste Nachricht rückt nach. 
