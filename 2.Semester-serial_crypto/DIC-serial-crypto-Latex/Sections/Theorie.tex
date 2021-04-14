@@ -50,26 +50,16 @@ self:
 \newpage
     \subsubsection{ninja}
         Ninja ist ein kleines build System mit Fokus auf Geschwindigkeit. 
-        Es wird in assembler geschrieben und ist so designend, dass die Input files von einem höheren Build-System erstellt werden (west) und das es so schnell wie möglich builded. 
-        
-
-        % Why yet another build system?
-        % Where other build systems are high-level languages Ninja aims to be an assembler.
-        
-        % Ninja build files are human-readable but not especially convenient to write by hand. (See the generated build file used to build Ninja itself.) These constrained build files allow Ninja to evaluate incremental builds quickly.
-        
-        % Should you use Ninja?
-        % Ninja's low-level approach makes it perfect for embedding into more featureful build systems; see a list of existing tools. Ninja is used to build Google Chrome, parts of Android, LLVM, and can be used in many other projects due to CMake's Ninja backend.
-        
-        % See the manual for more: philosophical background, whether and how you can use Ninja for your project, platform support, and details about the language semantics.
+        Es ist in assembler geschrieben und ist so designend, dass die Input files von einem höheren Build-System erstellt werden und das es so schnell wie möglich builded. 
+        Das Problem, das die Ninja entwickler mit GNU Make hatten, ist das es durch die Higher-Level Programmiersprache für große Projekte recht viel Zeit benötigt. 
+        Durch die Implementierung in Assembler steigt die Geschwindigkeit stark und ist somit sehr gut für große Projekte geeignet, jedoch steigt auch die Komplexität. 
 
     \subsubsection{KConfig}
     \textbf{Kernel Configuration File}\footnote{\url{https://docs.zephyrproject.org/latest/application/index.html?\#application-kconfig}}ist die \textcolor{red}{prj.conf} Datei in einem 
     Zephyr Projekt. In diesem werden besstimmte Konfigurationen, Funktionen und \anfuehrung{Geräte}, wie z.b. \textit{CONFIG\_SERIAL=y} aktiviert. 
-% The Zephyr kernel and subsystems can be configured at build time to adapt them for specific application and platform needs. Configuration is handled through Kconfig, which is the same configuration system used by the Linux kernel. The goal is to support configuration without having to change any source code.
-% Configuration options (often called symbols) are defined in Kconfig files, which also specify dependencies between symbols that determine what configurations are valid. Symbols can be grouped into menus and sub-menus to keep the interactive configuration interfaces organized.
-% The output from Kconfig is a header file autoconf.h with macros that can be tested at build time. Code for unused features can be compiled out to save space.
-% The following sections explain how to set Kconfig configuration options, go into detail on how Kconfig is used within the Zephyr project, and have some tips and best practices for writing Kconfig files.
+    Das Ziel ist es alle im Kernel beinhaltete Funktionen, Applikations spezifisch, zur Verfügung zu stellen, ohne den Source Code ändern zu müssen. 
+    Somit können Funktionen und Schnittstellen einfach aktiviert werden. 
+    Welche Schnittstellen für ein board aktiviert werden können, kann im Device Tree gefunden werden. 
 
 \newpage
     \subsubsection{Device Tree}
@@ -135,8 +125,8 @@ Ein Pseudoterminal ist ein Dienst der eine bidirektionale Pipe, aufbaut. Sie wer
 Im Fall von Zephyr mit dem nativ\_posx Board wird ein Pseudoterminal verwendet um mit dem Baord zu kommunizieren. Der Pfad dieses Terminals ist /dev/pts/.
 \subsection{Threads}
 Innerhalb eines Betriebssystems werden Applikationen und Abläufe als Prozesse realisiert. Prozesse werden vom Schedular verwaltet. Um nun die Abarbeitung dieser Prozesse zu 
-beschleunigen, besteht ein ein Prozess aus mehreren parallel laufenden Threads. Diese Threads beinhalten einen Teil des Prozesses, dadurch können große Probleme bestehen. 
-Es muss sichergestellt werden, dass Threads nie auf die gleichen Variablen/Ressourcen zugreifen, da ansonsten Race-Conditions entstehen. 
+beschleunigen, besteht ein ein Prozess aus mehreren parallel laufenden Threads. Diese Threads beinhalten einen Teil des Codes des Prozesses, dadurch können große Probleme entstehen. 
+Es muss sichergestellt werden, dass Threads nie auf die gleichen Variablen/Ressourcen zugreifen, da ansonsten \textit{race-Conditions} entstehen. 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.65\linewidth]{Process-Threads.png}
