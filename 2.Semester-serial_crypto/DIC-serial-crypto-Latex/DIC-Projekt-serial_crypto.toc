@@ -4,8 +4,8 @@
 \contentsline {subsection}{\numberline {2.1}Aufgaben und Eigenschaften des Krypto Prozessors}{1}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Theorie und Vorwissen}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Zephyr}{3}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}west}{3}{subsubsection.3.1.1}%
-\contentsline {subsubsubsection}{\numberline {3.1.1.1}West als Repo Verwalter}{3}{subsubsubsection.3.1.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}west}{4}{subsubsection.3.1.1}%
+\contentsline {subsubsubsection}{\numberline {3.1.1.1}West als Repo Verwalter}{4}{subsubsubsection.3.1.1.1}%
 \contentsline {subsubsubsection}{\numberline {3.1.1.2}West als Compiler}{4}{subsubsubsection.3.1.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.2}ninja}{5}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}KConfig}{5}{subsubsection.3.1.3}%

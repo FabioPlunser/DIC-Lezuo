@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.10)  14 APR 2021 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.10)  14 APR 2021 12:26
 entering extended mode
 **c:/Users/Peppi/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/DIC-Projekt-serial_crypto.tex
 (c:/Users/Peppi/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/DIC-Projekt-serial_crypto.tex
@@ -911,37 +911,36 @@ Overfull \hbox (33.28069pt too wide) in paragraph at lines 4--12
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 12.
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 13.
-(C:\Users\Peppi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: Bilder//htl-logo.jpg Graphic file (type jpg)
+<use Bilder//htl-logo.jpg>
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 16.
+(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
+[3] (C:\Users\Peppi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 42.
-(pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
- [3]
-File: Bilder//htl-logo.jpg Graphic file (type jpg)
-<use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 50.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 51.
 (pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
  [4]
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 64.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 65.
 (pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
  [5]
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 113.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 114.
 (pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
  [6]
 <Bilder//Process-Threads.png, id=350, 454.69875pt x 250.68657pt>
 File: Bilder//Process-Threads.png Graphic file (type png)
 <use Bilder//Process-Threads.png>
-Package pdftex.def Info: Bilder//Process-Threads.png  used on input line 132.
+Package pdftex.def Info: Bilder//Process-Threads.png  used on input line 133.
 (pdftex.def)             Requested size: 325.31154pt x 179.35428pt.
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
 <use Bilder//htl-logo.jpg>
-Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 137.
+Package pdftex.def Info: Bilder//htl-logo.jpg  used on input line 138.
 (pdftex.def)             Requested size: 121.49869pt x 24.2094pt.
  [7 <c:/Users/Peppi/GoogleDrive/Schule/2020_21/DIC/DIC-Lezuo/2.Semester-serial_crypto/DIC-serial-crypto-Latex/Bilder//Process-Threads.png>]
 
@@ -949,7 +948,7 @@ pdfTeX warning: pdflatex (file c:/Users/Peppi/GoogleDrive/Schule/2020_21/DIC/DIC
 <Bilder//Message-Queue.pdf, id=358, 434.58359pt x 89.3739pt>
 File: Bilder//Message-Queue.pdf Graphic file (type pdf)
 <use Bilder//Message-Queue.pdf>
-Package pdftex.def Info: Bilder//Message-Queue.pdf  used on input line 145.
+Package pdftex.def Info: Bilder//Message-Queue.pdf  used on input line 146.
 (pdftex.def)             Requested size: 500.484pt x 102.93054pt.
 ) (c:/Users\Peppi\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\Sections/Programm.tex
 File: Bilder//htl-logo.jpg Graphic file (type jpg)
@@ -1072,13 +1071,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  36191 strings out of 479697
  845358 string characters out of 2867132
- 1670079 words of memory out of 3000000
+ 1667756 words of memory out of 3000000
  52213 multiletter control sequences out of 15000+200000
  455345 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,17n,130p,1213b,2206s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 94i,16n,130p,1213b,1411s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Peppi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on c:/Users\Peppi\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.pdf (23 pages, 1828139 bytes).
+Output written on c:/Users\Peppi\GoogleDrive\Schule\2020_21\DIC\DIC-Lezuo\2.Semester-serial_crypto\DIC-serial-crypto-Latex\DIC-Projekt-serial_crypto.pdf (23 pages, 1828056 bytes).
 PDF statistics:
  822 PDF objects out of 1000 (max. 8388607)
  398 named destinations out of 1000 (max. 500000)
