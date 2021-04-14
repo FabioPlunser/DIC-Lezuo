@@ -88,9 +88,10 @@ void main(void)
 }
 void init_threads(pthread_t* thread_id)
 {	
-	//init threads
 	int i, thread_ok;
+	//create function pointer array
 	void*(*threads[])(void*) = {uart_in_thread, uart_out_thread, process_thread};
+	//go through function pointer array and init threads
 	for(i=0; i<Number_of_threads; i++)
 	{
 		thread_ok = pthread_create(&thread_id[i], NULL, threads[i], NULL);
@@ -121,12 +122,18 @@ void state_machine()
 							break;
 						case 'D':
 						case 'd':
+							//doesn't make sense to go further if process thread is running
+							//indented as provention of race conditions
+							//because then the global cipertext is not able to change when process thread is running
 							if(processing_busy == false){
 								st_state = DECRYPT;
 							}
 							break;
 						case 'K':
 						case 'k':
+							//doesn't make sense to go further if process thread is running
+							//indented as provention of race conditions
+							//because then the global KEY is not able to change when process thread is running
 							if(processing_busy == false)
 							{
 								st_state = KEY;
@@ -134,6 +141,9 @@ void state_machine()
 							break;
 						case 'I':
 						case 'i':
+							//doesn't make sense to go further if process thread is running
+							//indented as provention of race conditions
+							//because then the global IV is not able to change when process thread is running
 							if(processing_busy == false){
 								st_state = IV;
 							}
@@ -146,7 +156,10 @@ void state_machine()
 							put_message_in_uart_queue(".\n", strlen(".\n"));
 							if(processing_busy == true)
 							{
-								sleep(0.1); //weils dann geht
+								sleep(0.1); 
+								//my programm sended busy to fast so i fixed it with a little sleep
+								//I think the is that, the CPU usage of my CPU changes all the time and that has sometimes 
+								//impact on how fast the threads are running. 
 								put_message_in_uart_queue("BUSY\n", strlen("BUSY\n"));
 							}
 							break;
@@ -168,14 +181,14 @@ void state_machine()
 			case IV: 
 				st_state = DATA;
 				operation = OP_IV;
-				data_buffer = (uint8_t*)malloc(AES_IV_LEN);
+				data_buffer = (uint8_t*)malloc(AES_IV_LEN); //allocate data_buffer for key transmission
 				len = AES_IV_LEN;
 				break;
 			
 			case KEY: 
 				st_state = DATA;
 				operation = OP_KEY;
-				data_buffer = (uint8_t*)malloc(AES_KEY_LEN);
+				data_buffer = (uint8_t*)malloc(AES_KEY_LEN);//allocate data_buffer for key transmission
 				len = AES_KEY_LEN;
 				break;
 
@@ -184,18 +197,18 @@ void state_machine()
 				while(1)
 				{
 					if(!uart_poll_in(uart_dev, &uart_in)){ 
-						len = uart_in; 
+						len = uart_in; //get second transmission char that determines length of data
 						break;
 					}
 				}
-				data_buffer = (uint8_t*)malloc((len + AES_IV_LEN) * sizeof(uint8_t));
-				memcpy(data_buffer, iv, AES_IV_LEN);
-				data_buffer += AES_IV_LEN;
+				data_buffer = (uint8_t*)malloc((len + AES_IV_LEN) * sizeof(uint8_t)); //allocate data_buffer for cipher text trasmission + IV
+				memcpy(data_buffer, iv, AES_IV_LEN); //copy IV in first 16 char of buffer, crypto library needs this 
+				data_buffer += AES_IV_LEN; //point pointer to 16th char so that ciphertext is after IV
 
 			case DATA:
 				st_state = SELECT_OPERATION;
-				i = 0;
-				printk("DATA\n");
+				i = 0;	
+				//recevie Data
 				while(len> i){
 					if(!uart_poll_in(uart_dev, &uart_in)){ 
 						printk("\033[0;31m Data: 0x%02X\033[0m\n", uart_in);
@@ -208,17 +221,17 @@ void state_machine()
 				switch (operation)
 				{
 				case OP_KEY:
-					memcpy(key, data_buffer, AES_KEY_LEN);
+					memcpy(key, data_buffer, AES_KEY_LEN); //copy data_buffer into global variable for use in process thread
 					st_state = INIT; 
 					break;
 				case OP_IV:
-					memcpy(iv, data_buffer, AES_IV_LEN);
+					memcpy(iv, data_buffer, AES_IV_LEN); //copy data_buffer into global variable for use in process thread
 					st_state = INIT; 
 					break;
 				case OP_DECRYPT:
-					data_buffer -= AES_IV_LEN;
+					data_buffer -= AES_IV_LEN; //reset pointer of buffer to correctly copy into global varialbe
 					cbc_buffer=data_buffer;
-					put_message_in_crypto_queue("D\n");
+					put_message_in_crypto_queue("D\n"); //send decrypt command for process thread 
 					st_state = INIT; 
 					break;
 				
@@ -243,6 +256,7 @@ void* uart_in_thread(void * x){
 //put string into uart queue
 int put_message_in_uart_queue(unsigned char* str, uint32_t len)
 {	
+	//struct message for determing length, for correct sending zero termination 
 	static struct uart_message message; 
 	message.message = str; 
 	message.len = len;
@@ -254,6 +268,7 @@ int put_message_in_uart_queue(unsigned char* str, uint32_t len)
 	}
 	return 0;
 }
+
 //send uart messages from queue
 void* uart_out_thread(void * x)
 {
@@ -264,6 +279,7 @@ void* uart_out_thread(void * x)
 	while(1)
 	{
 		if(!k_msgq_get(&uart_queue, &message, K_NO_WAIT)) {
+			//get length and data from struct message
 			len = message->len;
 			message_temp = message->message; 
 			printk("Message in queue: %s\n", message_temp);
@@ -286,6 +302,7 @@ int put_message_in_crypto_queue(unsigned char* str)
 
 void format_plaintext_for_comparison(uint8_t* plaintext)
 {
+	//formatting ciphertext for correct coparison in test.py
 	uint8_t* plaintext_temp = malloc(strlen(plaintext)+3);
 	plaintext_temp[0] = 'D'; plaintext_temp[1] = ' ';
 	memcpy(plaintext_temp + 2, plaintext, strlen(plaintext));
@@ -294,7 +311,7 @@ void format_plaintext_for_comparison(uint8_t* plaintext)
 	put_message_in_uart_queue(plaintext_temp, strlen(plaintext_temp)+1);
 }
 
-
+//set flags for cbc mode
 int validate_hw_compatibility()
 {
 	uint32_t flags = 0U;
@@ -359,6 +376,7 @@ void * process_thread(void * x)
 	unsigned char* message;
 	while(1)
 	{
+		//handle D, W, P in crpyto thread
 		if(!k_msgq_get(&crypto_queue, &message, K_NO_WAIT)) {
 			
 			switch (message[0])
